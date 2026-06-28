@@ -50,7 +50,13 @@
         <article class="card"><b>03</b><div class="icon">👥</div><h3>Pendaftaran Tim / Kelompok</h3><p>Untuk pendaftaran peserta dalam bentuk tim atau komunitas.</p><a href="https://forms.gle/contoh-link-3" target="_blank">Daftar Tim</a></article>
         <article class="card"><b>04</b><div class="icon">🤝</div><h3>Pendaftaran Volunteer</h3><p>Untuk calon relawan yang ingin membantu pelaksanaan kegiatan.</p><a href="https://forms.gle/contoh-link-4" target="_blank">Daftar Volunteer</a></article>
         <article class="card"><b>05</b><div class="icon">🪪</div><h3>Pendaftaran Panitia</h3><p>Untuk pendataan internal panitia atau tim pelaksana kegiatan.</p><a href="https://forms.gle/contoh-link-5" target="_blank">Isi Data Panitia</a></article>
-        <article class="card"><b>06</b><div class="icon">🏪</div><h3>Pendaftaran Tenant / UMKM</h3><p>Untuk pelaku usaha, booth makanan, minuman, atau produk lokal.</p><a href="https://forms.gle/contoh-link-6" target="_blank">Daftar Tenant</a></article>
+<article class="card">
+  <b>06</b>
+  <div class="icon">🏪</div>
+  <h3>UMKM Terdaftar</h3>
+  <p>Lihat daftar UMKM/Tenant yang sudah terdaftar pada kegiatan Tenguyun.</p>
+  <button class="card-button" onclick="openUmkmModal()">Lihat UMKM</button>
+</article>
         <article class="card"><b>07</b><div class="icon">🤲</div><h3>Pendaftaran Sponsorship</h3><p>Untuk pihak yang berminat menjadi sponsor atau mitra kegiatan.</p><a href="https://forms.gle/contoh-link-7" target="_blank">Ajukan Sponsor</a></article>
         <article class="card"><b>08</b><div class="icon">📣</div><h3>Pendaftaran Media Partner</h3><p>Untuk media, komunitas, atau akun publikasi yang ingin bekerja sama.</p><a href="https://forms.gle/contoh-link-8" target="_blank">Daftar Media</a></article>
         <article class="card"><b>09</b><div class="icon">⭐</div><h3>Pendaftaran Performer</h3><p>Untuk band, musisi, dancer, atau pengisi acara lainnya.</p><a href="https://forms.gle/contoh-link-9" target="_blank">Daftar Performer</a></article>
@@ -91,5 +97,59 @@
       </div>
     </footer>
   </main>
+  <div id="umkmModal" class="modal-overlay">
+  <div class="umkm-modal">
+    <button class="modal-close" onclick="closeUmkmModal()">×</button>
+
+    <div class="modal-header">
+      <div class="modal-icon">🏪</div>
+      <div>
+        <h2>UMKM TERDAFTAR</h2>
+        <p>Berikut adalah daftar UMKM yang sudah terdaftar di Tenguyun.</p>
+      </div>
+    </div>
+
+    <div class="umkm-list">
+      <div class="umkm-item">
+        <img src="assets/acis.png" alt="Acis Cantik" class="umkm-image">
+
+        <div class="umkm-info">
+          <h3>Acis Cantik</h3>
+          <p>Kategori: <span>Cintaku</span></p>
+          <a href="https://www.instagram.com/prisciliacis/" target="_blank">
+            Instagram: @prisciliacis
+          </a>
+        </div>
+
+        <div class="umkm-status">
+          <span class="verified">Terverifikasi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-note">
+      Informasi UMKM diperbarui secara manual oleh panitia.
+    </div>
+  </div>
+</div>
+
+<script>
+  function openUmkmModal() {
+    document.getElementById("umkmModal").classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeUmkmModal() {
+    document.getElementById("umkmModal").classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+
+  window.addEventListener("click", function(event) {
+    const modal = document.getElementById("umkmModal");
+    if (event.target === modal) {
+      closeUmkmModal();
+    }
+  });
+</script>
 </body>
 </html>
