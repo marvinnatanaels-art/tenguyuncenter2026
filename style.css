@@ -319,11 +319,8 @@ footer h2 {
 }
 .footer-logo{
     width:95px;
-    height:95px;
+    height:auto;
     object-fit:contain;
-    background:#fff;
-    border-radius:16px;
-    padding:8px;
 }
 
 .footer-location h2{
