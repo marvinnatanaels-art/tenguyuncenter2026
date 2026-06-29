@@ -122,5 +122,95 @@ LOGIN (Admin)
       </div>
     </footer>
   </main>
+  <!-- ================= LOGIN ADMIN ================= -->
+
+<div id="loginModal" class="login-modal">
+
+    <div class="login-box">
+
+        <button class="close-btn"
+            onclick="closeLogin()">
+            ×
+        </button>
+
+        <div class="login-logo">
+
+            🔒
+
+        </div>
+
+        <h2>Dashboard Admin</h2>
+
+        <p>
+            Silakan login untuk mengakses Dashboard Administrator.
+        </p>
+
+        <input
+            id="adminUser"
+            type="text"
+            placeholder="Username">
+
+        <input
+            id="adminPass"
+            type="password"
+            placeholder="Password">
+
+        <button class="login-button"
+            onclick="loginAdmin()">
+
+            Masuk Dashboard
+
+        </button>
+
+    </div>
+
+</div>
+<script>
+
+function openLogin(){
+
+    document.getElementById("loginModal").style.display="flex";
+
+}
+
+function closeLogin(){
+
+    document.getElementById("loginModal").style.display="none";
+
+}
+
+function loginAdmin(){
+
+    let username=document.getElementById("adminUser").value;
+
+    let password=document.getElementById("adminPass").value;
+
+    if(username==="admin" && password==="aciscantik"){
+
+        window.location.href="admin.html";
+
+    }
+
+    else{
+
+        alert("Username atau Password salah.");
+
+    }
+
+}
+
+window.onclick=function(event){
+
+    let modal=document.getElementById("loginModal");
+
+    if(event.target==modal){
+
+        closeLogin();
+
+    }
+
+}
+
+</script>
 </body>
 </html>
