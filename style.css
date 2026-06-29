@@ -523,3 +523,149 @@ opacity:1;
 }
 
 }
+.admin-dashboard-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(8px);
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+}
+
+.admin-dashboard-box{
+    width:min(1150px,100%);
+    height:min(720px,92vh);
+    display:grid;
+    grid-template-columns:260px 1fr;
+    background:#0b0b0b;
+    border:1px solid rgba(255,196,0,.35);
+    border-radius:24px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 30px 90px rgba(0,0,0,.65);
+}
+
+.admin-close{
+    position:absolute;
+    top:16px;
+    right:18px;
+    z-index:2;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#ffc400;
+    color:#111;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.admin-sidebar{
+    background:#050505;
+    padding:30px 22px;
+    border-right:1px solid rgba(255,196,0,.25);
+}
+
+.admin-sidebar h2{
+    color:#ffc400;
+    margin:0 0 6px;
+}
+
+.admin-sidebar p{
+    color:#aaa;
+    margin-bottom:28px;
+}
+
+.admin-sidebar ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.admin-sidebar li{
+    padding:14px;
+    margin-bottom:10px;
+    border-radius:12px;
+    color:#ccc;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.admin-sidebar li.active,
+.admin-sidebar li:hover{
+    background:#ffc400;
+    color:#111;
+}
+
+.admin-content{
+    padding:38px;
+    overflow-y:auto;
+}
+
+.admin-content h1{
+    color:#ffc400;
+    margin-top:0;
+}
+
+.admin-content > p{
+    color:#ccc;
+}
+
+.admin-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin:28px 0;
+}
+
+.admin-stats div{
+    padding:22px;
+    border-radius:18px;
+    background:#151515;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.admin-stats span{
+    display:block;
+    color:#aaa;
+    margin-bottom:10px;
+}
+
+.admin-stats b{
+    color:#ffc400;
+    font-size:32px;
+}
+
+.admin-panel{
+    padding:24px;
+    border-radius:18px;
+    background:#151515;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.admin-panel h3{
+    color:#ffc400;
+}
+
+.admin-panel p{
+    color:#ddd;
+}
+
+@media(max-width:800px){
+    .admin-dashboard-box{
+        grid-template-columns:1fr;
+        height:92vh;
+    }
+
+    .admin-sidebar{
+        border-right:none;
+        border-bottom:1px solid rgba(255,196,0,.25);
+    }
+
+    .admin-stats{
+        grid-template-columns:1fr;
+    }
+}

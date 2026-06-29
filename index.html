@@ -6,7 +6,46 @@
   <title>TFO CENTER</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+<!-- Popup Dashboard -->
+<div id="adminDashboardModal" class="admin-dashboard-modal">
+  <div class="admin-dashboard-box">
+    <button class="admin-close" onclick="closeAdminDashboard()">×</button>
+
+    <aside class="admin-sidebar">
+      <h2>TFO Admin</h2>
+      <p>Dashboard</p>
+      <ul>
+        <li class="active">🏠 Dashboard</li>
+        <li>👥 Visitor</li>
+        <li>🏪 UMKM</li>
+        <li>📋 Event</li>
+        <li>📊 Statistik</li>
+        <li onclick="logoutAdmin()">🚪 Logout</li>
+      </ul>
+    </aside>
+
+    <section class="admin-content">
+      <h1>Dashboard Administrator</h1>
+      <p>Statistik mockup Tenguyun Form Center.</p>
+
+      <div class="admin-stats">
+        <div><span>Total Visitor</span><b>12.540</b></div>
+        <div><span>Total Klik Form</span><b>8.294</b></div>
+        <div><span>UMKM Terdaftar</span><b>32</b></div>
+        <div><span>Event Aktif</span><b>11</b></div>
+      </div>
+
+      <div class="admin-panel">
+        <h3>Form Terpopuler</h3>
+        <p>🚴 Tour de Bulungan — 1.120 klik</p>
+        <p>🎮 Esport Mobile Legends — 1.850 klik</p>
+        <p>🏪 UMKM — 1.240 klik</p>
+      </div>
+    </section>
+  </div>
+</div> 
   <header class="navbar">
     <div class="brand">
       <!-- Ganti file logo di assets/logo-tfc.png kalau mau pakai logo lain -->
@@ -186,8 +225,8 @@ function loginAdmin(){
     let password=document.getElementById("adminPass").value;
 
     if(username==="admin" && password==="aciscantik"){
-
-        window.location.href="admin.html";
+ document.getElementById("loginModal").style.display = "none";
+    document.getElementById("adminDashboardModal").style.display = "flex";
 
     }
 
@@ -199,13 +238,33 @@ function loginAdmin(){
 
 }
 
+function closeAdminDashboard(){
+
+    document.getElementById("adminDashboardModal").style.display="none";
+
+}
+
+function logoutAdmin(){
+
+    document.getElementById("adminDashboardModal").style.display="none";
+
+    document.getElementById("adminUser").value="";
+
+    document.getElementById("adminPass").value="";
+
+}
+
 window.onclick=function(event){
 
-    let modal=document.getElementById("loginModal");
-
-    if(event.target==modal){
+    if(event.target==document.getElementById("loginModal")){
 
         closeLogin();
+
+    }
+
+    if(event.target==document.getElementById("adminDashboardModal")){
+
+        closeAdminDashboard();
 
     }
 
