@@ -716,58 +716,200 @@ background:#ffd84d;
 transform:translateY(-2px);
 
 }
-.umkm-item{
+/* ================= CARD BUTTONS UMKM ================= */
 
-display:flex;
-
-gap:20px;
-
-align-items:center;
-
-padding:20px;
-
-border:1px solid rgba(255,255,255,.1);
-
-border-radius:15px;
-
-margin-top:20px;
-
+.card-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:22px;
 }
 
-.umkm-item img{
-
-width:100px;
-
-height:100px;
-
-border-radius:12px;
-
-object-fit:cover;
-
+.card-buttons a,
+.card-buttons button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:48px;
+    padding:0 12px;
+    border:none;
+    border-radius:10px;
+    background:#FFC400;
+    color:#111;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:800;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.umkm-item h3{
-
-margin:0;
-
-color:#FFC400;
-
+.card-buttons a:hover,
+.card-buttons button:hover{
+    background:#ffd84d;
+    transform:translateY(-2px);
 }
 
-.umkm-item p{
 
-margin:8px 0;
+/* ================= POPUP LIST UMKM ================= */
 
-color:#ddd;
-
+.umkm-modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(8px);
+    justify-content:center;
+    align-items:center;
+    padding:24px;
 }
 
-.umkm-item a{
+.umkm-modal-box{
+    position:relative;
+    width:min(780px,100%);
+    max-height:88vh;
+    overflow-y:auto;
+    background:#fff;
+    color:#111;
+    border-radius:24px;
+    padding:34px;
+    box-shadow:0 30px 90px rgba(0,0,0,.6);
+}
 
-color:#FFC400;
+.umkm-close{
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#f1f1f1;
+    color:#111;
+    font-size:30px;
+    line-height:1;
+    cursor:pointer;
+}
 
-text-decoration:none;
+.umkm-modal-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding-bottom:24px;
+    border-bottom:1px solid #eee;
+}
 
-font-weight:bold;
+.umkm-modal-icon{
+    width:76px;
+    height:76px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#FFC400;
+    font-size:36px;
+}
 
+.umkm-modal-header h2{
+    margin:0 0 8px;
+    font-size:30px;
+    font-weight:900;
+}
+
+.umkm-modal-header p{
+    margin:0;
+    color:#555;
+    line-height:1.6;
+}
+
+.umkm-list{
+    margin-top:24px;
+    display:grid;
+    gap:16px;
+}
+
+.umkm-card{
+    display:grid;
+    grid-template-columns:96px 1fr auto;
+    gap:18px;
+    align-items:center;
+    padding:18px;
+    border:1px solid #eee;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 8px 28px rgba(0,0,0,.07);
+}
+
+.umkm-card img{
+    width:96px;
+    height:96px;
+    object-fit:cover;
+    border-radius:14px;
+    background:#f5f5f5;
+}
+
+.umkm-detail h3{
+    margin:0 0 8px;
+    font-size:22px;
+    font-weight:900;
+}
+
+.umkm-detail p{
+    margin:0 0 8px;
+    color:#333;
+}
+
+.umkm-detail a{
+    color:#111;
+    font-weight:800;
+    text-decoration:none;
+}
+
+.umkm-detail a:hover{
+    color:#FFC400;
+}
+
+.umkm-status{
+    display:inline-block;
+    padding:8px 12px;
+    border-radius:999px;
+    background:#dff4d8;
+    color:#2d7a22;
+    font-size:13px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.umkm-note{
+    margin-top:22px;
+    padding:14px 18px;
+    border-radius:14px;
+    background:#f7f7f7;
+    color:#666;
+    font-size:14px;
+}
+
+@media(max-width:640px){
+    .card-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .umkm-modal-box{
+        padding:24px;
+    }
+
+    .umkm-modal-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .umkm-card{
+        grid-template-columns:1fr;
+    }
+
+    .umkm-card img{
+        width:100%;
+        height:180px;
+    }
 }

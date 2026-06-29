@@ -85,28 +85,8 @@ LOGIN (Admin)
       <div class="underline"></div>
 
       <div class="form-grid">
-<article class="card">
-    <b>01</b>
+        <article class="card"><b>01</b><div class="icon">🏪</div><h3>Pendaftaran UMKM</h3><p>Form pendaftaran tenant/UMKM untuk kegiatan Tenguyun.</p><a href="https://forms.gle/jCPtwgbN8WNx4hy37" target="_blank">Daftar UMKM</a></article>
 
-    <div class="icon">🏪</div>
-
-    <h3>Pendaftaran UMKM</h3>
-
-    <p>
-        Form pendaftaran tenant UMKM
-        untuk kegiatan Tenguyun Fest.
-    </p>
-
-    <div class="card-buttons">
-        <a href="https://forms.gle/jCPtwgbN8WNx4hy37" target="_blank">
-            Daftar UMKM
-        </a>
-
-        <button type="button" onclick="openUmkmModal()">
-            List UMKM
-        </button>
-    </div>
-</article>
 <article class="card"><b>02</b><div class="icon">🏹</div><h3>Panahan</h3><p>Form pendaftaran peserta lomba panahan.</p><a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank">Daftar Panahan</a></article>
 
 <article class="card"><b>03</b><div class="icon">🔫</div><h3>Airsoft</h3><p>Form pendaftaran peserta kegiatan Airsoft.</p><a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank">Daftar Airsoft</a></article>
@@ -182,15 +162,20 @@ LOGIN (Admin)
     </footer>
   </main>
   <!-- ================= LOGIN ADMIN ================= -->
-<!-- ================= LOGIN ADMIN ================= -->
 
 <div id="loginModal" class="login-modal">
+
     <div class="login-box">
 
-        <button class="close-btn" onclick="closeLogin()">×</button>
+        <button class="close-btn"
+            onclick="closeLogin()">
+            ×
+        </button>
 
         <div class="login-logo">
+
             🔒
+
         </div>
 
         <h2>Dashboard Admin</h2>
@@ -209,127 +194,82 @@ LOGIN (Admin)
             type="password"
             placeholder="Password">
 
-        <button class="login-button" onclick="loginAdmin()">
+        <button class="login-button"
+            onclick="loginAdmin()">
+
             Masuk Dashboard
+
         </button>
 
     </div>
+
 </div>
-
-
-<!-- ================= POPUP LIST UMKM ================= -->
-
-<div id="umkmModal" class="umkm-modal-overlay">
-    <div class="umkm-modal-box">
-
-        <button class="umkm-close" onclick="closeUmkmModal()">×</button>
-
-        <div class="umkm-modal-header">
-            <div class="umkm-modal-icon">🏪</div>
-
-            <div>
-                <h2>UMKM Terdaftar</h2>
-                <p>Daftar tenant yang telah terdaftar pada Tenguyun Fest.</p>
-            </div>
-        </div>
-
-        <div class="umkm-list">
-
-            <div class="umkm-card">
-                <img src="assets/acis.png" alt="Acis Cantik">
-
-                <div class="umkm-detail">
-                    <h3>Acis Cantik</h3>
-                    <p><strong>Kategori:</strong> Cintaku</p>
-
-                    <a href="https://www.instagram.com/prisciliacis/" target="_blank">
-                        Instagram: @prisciliacis
-                    </a>
-                </div>
-
-                <span class="umkm-status">Terverifikasi</span>
-            </div>
-
-        </div>
-
-        <div class="umkm-note">
-            Informasi UMKM diperbarui secara manual oleh panitia.
-        </div>
-
-    </div>
-</div>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
 function openLogin(){
-    document.getElementById("loginModal").style.display = "flex";
+
+    document.getElementById("loginModal").style.display="flex";
+
 }
 
 function closeLogin(){
-    document.getElementById("loginModal").style.display = "none";
+
+    document.getElementById("loginModal").style.display="none";
+
 }
 
 function loginAdmin(){
 
-    let username = document.getElementById("adminUser").value;
-    let password = document.getElementById("adminPass").value;
+    let username=document.getElementById("adminUser").value;
 
-    if(username === "admin" && password === "aciscantik"){
+    let password=document.getElementById("adminPass").value;
 
-        document.getElementById("loginModal").style.display = "none";
-        document.getElementById("adminDashboardModal").style.display = "flex";
+    if(username==="admin" && password==="aciscantik"){
+ document.getElementById("loginModal").style.display = "none";
+    document.getElementById("adminDashboardModal").style.display = "flex";
 
-    } else {
+    }
+
+    else{
+
         alert("Username atau Password salah.");
+
     }
 
 }
 
 function closeAdminDashboard(){
-    document.getElementById("adminDashboardModal").style.display = "none";
+
+    document.getElementById("adminDashboardModal").style.display="none";
+
 }
 
 function logoutAdmin(){
 
-    document.getElementById("adminDashboardModal").style.display = "none";
+    document.getElementById("adminDashboardModal").style.display="none";
 
-    document.getElementById("adminUser").value = "";
-    document.getElementById("adminPass").value = "";
+    document.getElementById("adminUser").value="";
+
+    document.getElementById("adminPass").value="";
 
 }
 
-function openUmkmModal(){
-    document.getElementById("umkmModal").style.display = "flex";
-}
+window.onclick=function(event){
 
-function closeUmkmModal(){
-    document.getElementById("umkmModal").style.display = "none";
-}
+    if(event.target==document.getElementById("loginModal")){
 
-window.onclick = function(event){
-
-    const loginModal = document.getElementById("loginModal");
-    const dashboardModal = document.getElementById("adminDashboardModal");
-    const umkmModal = document.getElementById("umkmModal");
-
-    if(event.target === loginModal){
         closeLogin();
+
     }
 
-    if(event.target === dashboardModal){
+    if(event.target==document.getElementById("adminDashboardModal")){
+
         closeAdminDashboard();
-    }
 
-    if(event.target === umkmModal){
-        closeUmkmModal();
     }
 
 }
 
 </script>
-
 </body>
 </html>
