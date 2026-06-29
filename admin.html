@@ -1,125 +1,176 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TFO CENTER</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TFO Dashboard Admin</title>
+
+  <link rel="stylesheet" href="admin.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>TFO Dashboard</title>
+
+<link rel="stylesheet"
+href="admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="brand">
-      <!-- Ganti file logo di assets/logo-tfc.png kalau mau pakai logo lain -->
-      <img class="brand-logo" src="assets/logo-tfc.png" alt="Logo Tenguyun" />
-      <div>
-        <h1>TENGUYUN</h1>
-        <p>FORM CENTER</p>
-      </div>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <img src="assets/logo-tfc.png">
+
+        <h2>TFO Admin</h2>
+
     </div>
 
-    <nav>
-      <a href="#home">Beranda</a>
-      <a href="#pendaftaran">Pendaftaran</a>
-      <a href="#informasi">Informasi</a>
-      <a href="#kontak">Kontak Admin</a>
-    </nav>
+    <ul>
 
-    <!-- Ganti nomor WhatsApp admin di bawah ini -->
-    <a class="chat-btn" href="https://wa.me/6281329246252" target="_blank">Chat Admin</a>
-  </header>
+        <li class="active">🏠 Dashboard</li>
 
-  <main id="home">
-    <!-- Ganti file cover di assets/header-cover.png kalau mau pakai cover lain -->
-    <section class="hero-image">
-      <img src="assets/header-cover.png" alt="Tenguyun Form Center" />
-    </section>
+        <li>👥 Visitor</li>
 
-    <section class="announcement">
-      <strong>📣 PENDAFTARAN DIBUKA!</strong>
-      <span>Pendaftaran dibuka sampai 16 Agustus 2026 atau sampai kuota terpenuhi.</span>
-      <a href="#informasi">Lihat Info Lengkap</a>
-    </section>
+        <li>🏪 UMKM</li>
 
-    <section id="pendaftaran" class="forms-section">
-      <h2>PILIH FORM PENDAFTARAN</h2>
-      <div class="underline"></div>
+        <li>📝 Event</li>
 
-      <div class="form-grid">
-        <article class="card"><b>01</b><div class="icon">🏪</div><h3>Pendaftaran UMKM</h3><p>Form pendaftaran tenant/UMKM untuk kegiatan Tenguyun.</p><a href="https://forms.gle/jCPtwgbN8WNx4hy37" target="_blank">Daftar UMKM</a></article>
+        <li>📊 Statistik</li>
 
-<article class="card"><b>02</b><div class="icon">🏹</div><h3>Panahan</h3><p>Form pendaftaran peserta lomba panahan.</p><a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank">Daftar Panahan</a></article>
+        <li>⚙ Pengaturan</li>
 
-<article class="card"><b>03</b><div class="icon">🔫</div><h3>Airsoft</h3><p>Form pendaftaran peserta kegiatan Airsoft.</p><a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank">Daftar Airsoft</a></article>
+        <li onclick="logout()">🚪 Logout</li>
 
-<article class="card"><b>04</b><div class="icon">🎮</div><h3>Esport Mobile Legends</h3><p>Form pendaftaran peserta lomba Esport Mobile Legends.</p><a href="https://forms.gle/merCUwVcruh9TRkm8" target="_blank">Daftar Esport</a></article>
+    </ul>
 
-<article class="card"><b>05</b><div class="icon">🥁</div><h3>Drum Battle</h3><p>Form pendaftaran peserta Drum Battle. Link belum tersedia.</p><a href="#" onclick="alert('Link pendaftaran Drum Battle belum tersedia.'); return false;">Belum Tersedia</a></article>
-
-<article class="card"><b>06</b><div class="icon">🥢</div><h3>Sumpit Traditional</h3><p>Form pendaftaran peserta lomba Sumpit Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Sumpit</a></article>
-
-<article class="card"><b>07</b><div class="icon">🌀</div><h3>Gasing Traditional</h3><p>Form pendaftaran peserta lomba Gasing Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Gasing</a></article>
-
-<article class="card"><b>08</b><div class="icon">🪜</div><h3>Egrang Traditional</h3><p>Form pendaftaran peserta lomba Egrang Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Egrang</a></article>
-
-<article class="card"><b>09</b><div class="icon">🎨</div><h3>Festival Melukis</h3><p>Form pendaftaran peserta Festival Melukis.</p><a href="https://forms.gle/LHqy9YPwgEsttmXJ9" target="_blank">Daftar Melukis</a></article>
-
-<article class="card"><b>10</b><div class="icon">🖍️</div><h3>Festival Mewarnai</h3><p>Form pendaftaran peserta Festival Mewarnai.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Mewarnai</a></article>
-
-<article class="card"><b>11</b><div class="icon">🤸</div><h3>Festival Senam</h3><p>Form pendaftaran peserta Festival Senam.</p><a href="https://forms.gle/6czhPERNUgDieDrq5" target="_blank">Daftar Senam</a></article>
-
-<article class="card"><b>12</b><div class="icon">🚴</div><h3>Tour de Bulungan (Gowes)</h3><p>Form pendaftaran peserta Tour de Bulungan atau Gowes.</p><a href="https://forms.gle/xnT66Bm7c6bYKhTK8" target="_blank">Daftar Gowes</a></article>
-      </div>
-    </section>
-
-    <section id="informasi" class="features">
-      <div><h3>📅 Mudah & Cepat</h3><p>Isi form secara online kapan saja dan di mana saja.</p></div>
-      <div><h3>🔒 Data Aman</h3><p>Data digunakan sesuai kebutuhan kegiatan.</p></div>
-      <div><h3>🔔 Informasi Terbaru</h3><p>Dapatkan update terbaru seputar kegiatan melalui portal ini.</p></div>
-      <div><h3>🎧 Bantuan Admin</h3><p>Jika ada kendala, silakan hubungi admin melalui kontak tersedia.</p></div>
-    </section>
-
-    <footer id="kontak">
-     
-      <div class="footer-brand">
-    <img src="assets/logo-unikaltar.png" alt="Logo Universitas Kaltara" class="footer-logo">
-
-    <div class="footer-location">
-        <h2>LOKASI ACARA</h2>
-
-        <h3>Universitas Kaltara</h3>
-
-        <p>
-            Jl. Sengkawit, Tanjung Selor Hilir<br>
-            Kecamatan Tanjung Selor<br>
-            Kabupaten Bulungan<br>
-            Kalimantan Utara
-        </p>
-
-        <a href="https://maps.google.com/?q=Universitas+Kaltara+Tanjung+Selor"
-           target="_blank"
-           class="maps-link">
-            📍 Lihat Lokasi di Google Maps
-        </a>
-    </div>
 </div>
 
-      <div>
-        <h3>HUBUNGI ADMIN</h3>
-        <p>WhatsApp: 0813-2924-6252</p>
-        <p>Email: tenguyunfestorganizer@gmail.com</p>
-        <p>
-    Instagram:
-    <a href="https://www.instagram.com/tenguyunfest/" target="_blank">
-        @tenguyunfest
-    </a>
-</p>
-      </div>
+<div class="main">
 
-      <div>
-        <h3>SCAN UNTUK AKSES PORTAL</h3>
-        <div class="qr">QR</div>
-      </div>
-    </footer>
-  </main>
+<header>
+
+<h1>Dashboard Administrator</h1>
+
+<p>Selamat datang di Tenguyun Form Center.</p>
+
+</header>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Visitor</h3>
+
+<h1>12.540</h1>
+
+<span>Hari ini +325</span>
+
+</div>
+
+<div class="card">
+
+<h3>Total Pendaftar</h3>
+
+<h1>864</h1>
+
+<span>12 Kategori</span>
+
+</div>
+
+<div class="card">
+
+<h3>UMKM</h3>
+
+<h1>32</h1>
+
+<span>Sudah Terdaftar</span>
+
+</div>
+
+<div class="card">
+
+<h3>Event Aktif</h3>
+
+<h1>11</h1>
+
+<span>1 Draft</span>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="left">
+
+<h2>📊 Statistik Pengunjung</h2>
+
+<div class="fake-chart">
+
+<div style="height:40%"></div>
+
+<div style="height:65%"></div>
+
+<div style="height:80%"></div>
+
+<div style="height:55%"></div>
+
+<div style="height:90%"></div>
+
+<div style="height:70%"></div>
+
+<div style="height:100%"></div>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<h2>Aktivitas Terbaru</h2>
+
+<ul>
+
+<li>✔ UMKM Acis Cantik terdaftar.</li>
+
+<li>✔ Form Panahan dibuka.</li>
+
+<li>✔ Festival Melukis diperbarui.</li>
+
+<li>✔ Visitor mencapai 12.540.</li>
+
+<li>✔ Tour de Bulungan ditambahkan.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logout(){
+
+window.location.href="index.html";
+
+}
+
+</script>
+
 </body>
+
 </html>
