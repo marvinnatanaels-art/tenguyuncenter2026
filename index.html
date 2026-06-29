@@ -85,8 +85,37 @@ LOGIN (Admin)
       <div class="underline"></div>
 
       <div class="form-grid">
-        <article class="card"><b>01</b><div class="icon">🏪</div><h3>Pendaftaran UMKM</h3><p>Form pendaftaran tenant/UMKM untuk kegiatan Tenguyun.</p><a href="https://forms.gle/jCPtwgbN8WNx4hy37" target="_blank">Daftar UMKM</a></article>
+<article class="card">
+    <b>01</b>
 
+    <div class="icon">🏪</div>
+
+    <h3>Pendaftaran UMKM</h3>
+
+    <p>
+        Form pendaftaran tenant UMKM
+        untuk kegiatan Tenguyun Fest.
+    </p>
+
+    <div class="card-buttons">
+
+        <a href="https://forms.gle/jCPtwgbN8WNx4hy37"
+           target="_blank">
+
+           Daftar UMKM
+
+        </a>
+
+        <button onclick="openUmkmModal()">
+
+            List UMKM
+
+        </button>
+
+    </div>
+
+</article>
+        
 <article class="card"><b>02</b><div class="icon">🏹</div><h3>Panahan</h3><p>Form pendaftaran peserta lomba panahan.</p><a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank">Daftar Panahan</a></article>
 
 <article class="card"><b>03</b><div class="icon">🔫</div><h3>Airsoft</h3><p>Form pendaftaran peserta kegiatan Airsoft.</p><a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank">Daftar Airsoft</a></article>
@@ -269,7 +298,60 @@ window.onclick=function(event){
     }
 
 }
+function openUmkmModal(){
 
+document.getElementById("umkmModal").style.display="flex";
+
+}
+
+function closeUmkmModal(){
+
+document.getElementById("umkmModal").style.display="none";
+
+}
+<div id="umkmModal" class="admin-dashboard-modal">
+
+<div class="admin-dashboard-box">
+
+<button class="admin-close"
+onclick="closeUmkmModal()">×</button>
+
+<section class="admin-content">
+
+<h1>🏪 UMKM Terdaftar</h1>
+
+<p>Daftar tenant yang telah terdaftar pada Tenguyun Fest.</p>
+
+<div class="admin-panel">
+
+<div class="umkm-item">
+
+<img src="assets/acis.png">
+
+<div>
+
+<h3>Acis Cantik</h3>
+
+<p>Kategori : Cintaku</p>
+
+<a href="https://www.instagram.com/prisciliacis/"
+target="_blank">
+
+Instagram
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
 </script>
 </body>
 </html>
