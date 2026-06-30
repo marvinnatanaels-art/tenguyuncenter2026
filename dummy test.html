@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TFO CENTER</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dummy.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
 <body>
@@ -85,8 +86,30 @@ LOGIN (Admin)
       <div class="underline"></div>
 
       <div class="form-grid">
-        <article class="card"><b>01</b><div class="icon">🏪</div><h3>Pendaftaran UMKM</h3><p>Form pendaftaran tenant/UMKM untuk kegiatan Tenguyun.</p><a href="https://forms.gle/jCPtwgbN8WNx4hy37" target="_blank">Daftar UMKM</a></article>
+<article class="card">
+    <b>01</b>
 
+    <div class="icon">🏪</div>
+
+    <h3>Pendaftaran UMKM</h3>
+
+    <p>
+        Form pendaftaran tenant UMKM
+        untuk kegiatan Tenguyun Fest.
+    </p>
+
+    <div class="card-buttons">
+<a href="https://forms.gle/jCPtwgbN8WNx4hy37"
+   target="_blank"
+   class="btn-daftar-umkm">
+               Daftar UMKM
+        </a>
+
+        <button type="button" onclick="openUmkmModal()">
+            List UMKM
+        </button>
+    </div>
+</article>
 <article class="card"><b>02</b><div class="icon">🏹</div><h3>Panahan</h3><p>Form pendaftaran peserta lomba panahan.</p><a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank">Daftar Panahan</a></article>
 
 <article class="card"><b>03</b><div class="icon">🔫</div><h3>Airsoft</h3><p>Form pendaftaran peserta kegiatan Airsoft.</p><a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank">Daftar Airsoft</a></article>
@@ -121,7 +144,9 @@ LOGIN (Admin)
     <footer id="kontak">
      
       <div class="footer-brand">
+<a href="https://www.instagram.com/univ.kaltara/" target="_blank">
     <img src="assets/logo-unikaltar.png" alt="Logo Universitas Kaltara" class="footer-logo">
+</a>
 
     <div class="footer-location">
         <h2>LOKASI ACARA</h2>
@@ -157,25 +182,22 @@ LOGIN (Admin)
 
       <div>
         <h3>SCAN UNTUK AKSES PORTAL</h3>
-        <div class="qr">QR</div>
+<div class="qr">
+    <img src="assets/qr-tfo.png" alt="QR Tenguyun Form Center">
+</div>
       </div>
     </footer>
   </main>
   <!-- ================= LOGIN ADMIN ================= -->
+<!-- ================= LOGIN ADMIN ================= -->
 
 <div id="loginModal" class="login-modal">
-
     <div class="login-box">
 
-        <button class="close-btn"
-            onclick="closeLogin()">
-            ×
-        </button>
+        <button class="close-btn" onclick="closeLogin()">×</button>
 
         <div class="login-logo">
-
             🔒
-
         </div>
 
         <h2>Dashboard Admin</h2>
@@ -194,82 +216,256 @@ LOGIN (Admin)
             type="password"
             placeholder="Password">
 
-        <button class="login-button"
-            onclick="loginAdmin()">
-
+        <button class="login-button" onclick="loginAdmin()">
             Masuk Dashboard
-
         </button>
 
     </div>
+</div>
+
+
+<!-- ================= POPUP LIST UMKM ================= -->
+
+<div id="umkmModal" class="umkm-modal-overlay">
+    <div class="umkm-modal-box">
+
+        <button class="umkm-close" onclick="closeUmkmModal()">×</button>
+
+        <div class="umkm-modal-header">
+            <div class="umkm-modal-icon">🏪</div>
+
+            <div>
+                <h2>UMKM Terdaftar</h2>
+                <p>Daftar tenant yang telah terdaftar pada Tenguyun Fest.</p>
+            </div>
+        </div>
+
+        <div class="umkm-list">
+
+            <div class="umkm-list">
+
+    <!-- 1 -->
+    <div class="umkm-card">
+        <img src="assets/cihonje.png" alt="Cihonje">
+
+        <div class="umkm-detail">
+            <h3>Cihonje</h3>
+            <p><strong>Kategori:</strong> Makanan Berat</p>
+
+            <a href="https://www.instagram.com/cihonje_crunchiest_chicken//" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 2 -->
+    <div class="umkm-card">
+        <img src="assets/larehome.png" alt="Lare Homewear">
+
+        <div class="umkm-detail">
+            <h3>Lare Homewear</h3>
+            <p><strong>Kategori:</strong> Fashion</p>
+
+            <a href="https://www.instagram.com/larehomewear.id/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 3 -->
+    <div class="umkm-card">
+        <img src="assets/teakopling.jpeg" alt="Tea Kopling">
+
+        <div class="umkm-detail">
+            <h3>Tea Kopling</h3>
+            <p><strong>Kategori:</strong> Minuman Lain</p>
+
+            <a href="https://www.instagram.com/teakopling/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 4 -->
+    <div class="umkm-card">
+        <img src="assets/littlewhisk.png" alt="Little Whisk">
+
+        <div class="umkm-detail">
+            <h3>Little Whisk</h3>
+            <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+            <a href="https://www.instagram.com/little_whiskkkk/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 5 -->
+    <div class="umkm-card">
+        <img src="assets/pentol.png" alt="Pentol Parahyangan">
+
+        <div class="umkm-detail">
+            <h3>PENTOL PRASMANAN PARAHYANGAN</h3>
+            <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+            <span style="color:#888;">Instagram belum tersedia</span>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 6 -->
+    <div class="umkm-card">
+        <img src="assets/naoka.png" alt="Naoka Space">
+
+        <div class="umkm-detail">
+            <h3>Naoka Space</h3>
+            <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+            <a href="https://www.instagram.com/naoka.space/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 7 -->
+    <div class="umkm-card">
+        <img src="assets/babaica.jpeg" alt="Baba Ica">
+
+        <div class="umkm-detail">
+            <h3>Baba Ica</h3>
+            <p><strong>Kategori:</strong> Makanan Berat</p>
+
+            <a href="https://www.instagram.com/alftastyfood.kaltara/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 8 -->
+    <div class="umkm-card">
+        <img src="assets/sfit.jpeg" alt="Syafitri">
+
+        <div class="umkm-detail">
+            <h3>Syafitri</h3>
+            <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+            <span style="color:#888;">Instagram tidak tersedia</span>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+
+    <!-- 9 -->
+    <div class="umkm-card">
+        <img src="assets/zhiyu.png" alt="Zhiyu Space">
+
+        <div class="umkm-detail">
+            <h3>Zhiyu Space</h3>
+            <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+            <a href="https://www.instagram.com/zhiyu.space/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
 
 </div>
+
+        </div>
+
+        <div class="umkm-note">
+            Informasi UMKM diperbarui secara manual oleh panitia.
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
 function openLogin(){
-
-    document.getElementById("loginModal").style.display="flex";
-
+    document.getElementById("loginModal").style.display = "flex";
 }
 
 function closeLogin(){
-
-    document.getElementById("loginModal").style.display="none";
-
+    document.getElementById("loginModal").style.display = "none";
 }
 
 function loginAdmin(){
 
-    let username=document.getElementById("adminUser").value;
+    let username = document.getElementById("adminUser").value;
+    let password = document.getElementById("adminPass").value;
 
-    let password=document.getElementById("adminPass").value;
+    if(username === "admin" && password === "aciscantik"){
 
-    if(username==="admin" && password==="aciscantik"){
- document.getElementById("loginModal").style.display = "none";
-    document.getElementById("adminDashboardModal").style.display = "flex";
+        document.getElementById("loginModal").style.display = "none";
+        document.getElementById("adminDashboardModal").style.display = "flex";
 
-    }
-
-    else{
-
+    } else {
         alert("Username atau Password salah.");
-
     }
 
 }
 
 function closeAdminDashboard(){
-
-    document.getElementById("adminDashboardModal").style.display="none";
-
+    document.getElementById("adminDashboardModal").style.display = "none";
 }
 
 function logoutAdmin(){
 
-    document.getElementById("adminDashboardModal").style.display="none";
+    document.getElementById("adminDashboardModal").style.display = "none";
 
-    document.getElementById("adminUser").value="";
-
-    document.getElementById("adminPass").value="";
+    document.getElementById("adminUser").value = "";
+    document.getElementById("adminPass").value = "";
 
 }
 
-window.onclick=function(event){
+function openUmkmModal(){
+    document.getElementById("umkmModal").style.display = "flex";
+}
 
-    if(event.target==document.getElementById("loginModal")){
+function closeUmkmModal(){
+    document.getElementById("umkmModal").style.display = "none";
+}
 
+window.onclick = function(event){
+
+    const loginModal = document.getElementById("loginModal");
+    const dashboardModal = document.getElementById("adminDashboardModal");
+    const umkmModal = document.getElementById("umkmModal");
+
+    if(event.target === loginModal){
         closeLogin();
-
     }
 
-    if(event.target==document.getElementById("adminDashboardModal")){
-
+    if(event.target === dashboardModal){
         closeAdminDashboard();
+    }
 
+    if(event.target === umkmModal){
+        closeUmkmModal();
     }
 
 }
 
 </script>
+
 </body>
 </html>
