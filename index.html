@@ -19,10 +19,6 @@
       <p>Dashboard</p>
       <ul>
         <li class="active">🏠 Dashboard</li>
-        <li>👥 Visitor</li>
-        <li>🏪 UMKM</li>
-        <li>📋 Event</li>
-        <li>📊 Statistik</li>
         <li onclick="logoutAdmin()">🚪 Logout</li>
       </ul>
     </aside>
@@ -32,17 +28,27 @@
       <p>Statistik mockup Tenguyun Form Center.</p>
 
       <div class="admin-stats">
-        <div><span>Total Visitor</span><b>12.540</b></div>
-        <div><span>Total Klik Form</span><b>8.294</b></div>
-        <div><span>UMKM Terdaftar</span><b>32</b></div>
-        <div><span>Event Aktif</span><b>11</b></div>
+        <div><span>Total Visitor</span><b id="totalVisitor">0</b></div>
+        <div><span>Total Klik Form</span><b id="totalClick">0</b></div>
+        <div><span>UMKM Terdaftar</span><b id="totalUMKM">11</b></div>
+        <div><span>Event Aktif</span><b id="totalEvent">12</b></div>
       </div>
 
       <div class="admin-panel">
-        <h3>Form Terpopuler</h3>
-        <p>🚴 Tour de Bulungan — 1.120 klik</p>
-        <p>🎮 Esport Mobile Legends — 1.850 klik</p>
-        <p>🏪 UMKM — 1.240 klik</p>
+    <h3>📈 Grafik Pengunjung 7 Hari</h3>
+    <div id="visitorChart" class="mini-chart"></div>
+</div>
+
+<div class="admin-panel">
+    <h3>📱 Device Pengunjung</h3>
+    <div id="deviceStats" class="device-stats"></div>
+</div>
+
+<div class="admin-panel">
+    <h3>🔥 Form Terpopuler</h3>
+    <div id="popularForms">Loading...</div>
+</div>
+
       </div>
     </section>
   </div>
@@ -101,7 +107,7 @@ LOGIN (Admin)
     <div class="card-buttons">
 <a href="https://forms.gle/jCPtwgbN8WNx4hy37"
    target="_blank"
-   class="btn-daftar-umkm">
+   class="btn-daftar-umkm"onclick="trackFormClick('UMKM')">
                Daftar UMKM
         </a>
 
@@ -110,27 +116,27 @@ LOGIN (Admin)
         </button>
     </div>
 </article>
-<article class="card"><b>02</b><div class="icon">🏹</div><h3>Panahan</h3><p>Form pendaftaran peserta lomba panahan.</p><a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank">Daftar Panahan</a></article>
+<article class="card"><b>02</b><div class="icon">🏹</div><h3>Panahan</h3><p>Form pendaftaran peserta lomba panahan.</p><a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank"onclick="trackFormClick('Panahan')">Daftar Panahan</a></article>
 
-<article class="card"><b>03</b><div class="icon">🔫</div><h3>Airsoft</h3><p>Form pendaftaran peserta kegiatan Airsoft.</p><a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank">Daftar Airsoft</a></article>
+<article class="card"><b>03</b><div class="icon">🔫</div><h3>Airsoft</h3><p>Form pendaftaran peserta kegiatan Airsoft.</p><a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank"onclick="trackFormClick('Airsoft')">Daftar Airsoft</a></article>
 
-<article class="card"><b>04</b><div class="icon">🎮</div><h3>Esport Mobile Legends</h3><p>Form pendaftaran peserta lomba Esport Mobile Legends.</p><a href="https://forms.gle/merCUwVcruh9TRkm8" target="_blank">Daftar Esport</a></article>
+<article class="card"><b>04</b><div class="icon">🎮</div><h3>Esport Mobile Legends</h3><p>Form pendaftaran peserta lomba Esport Mobile Legends.</p><a href="https://forms.gle/merCUwVcruh9TRkm8" target="_blank"onclick="trackFormClick('Esport')">Daftar Esport</a></article>
 
 <article class="card"><b>05</b><div class="icon">🥁</div><h3>Drum Battle</h3><p>Form pendaftaran peserta Drum Battle. Link belum tersedia.</p><a href="#" onclick="alert('Link pendaftaran Drum Battle belum tersedia.'); return false;">Belum Tersedia</a></article>
 
-<article class="card"><b>06</b><div class="icon">🥢</div><h3>Sumpit Traditional</h3><p>Form pendaftaran peserta lomba Sumpit Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Sumpit</a></article>
+<article class="card"><b>06</b><div class="icon">🥢</div><h3>Sumpit Traditional</h3><p>Form pendaftaran peserta lomba Sumpit Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank"onclick="trackFormClick('Sumpit')">Daftar Sumpit</a></article>
 
-<article class="card"><b>07</b><div class="icon">🌀</div><h3>Gasing Traditional</h3><p>Form pendaftaran peserta lomba Gasing Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Gasing</a></article>
+<article class="card"><b>07</b><div class="icon">🌀</div><h3>Gasing Traditional</h3><p>Form pendaftaran peserta lomba Gasing Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank"onclick="trackFormClick('Gasing')">Daftar Gasing</a></article>
 
-<article class="card"><b>08</b><div class="icon">🪜</div><h3>Egrang Traditional</h3><p>Form pendaftaran peserta lomba Egrang Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Egrang</a></article>
+<article class="card"><b>08</b><div class="icon">🪜</div><h3>Egrang Traditional</h3><p>Form pendaftaran peserta lomba Egrang Traditional.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank"onclick="trackFormClick('Egrang')">Daftar Egrang</a></article>
 
-<article class="card"><b>09</b><div class="icon">🎨</div><h3>Festival Melukis</h3><p>Form pendaftaran peserta Festival Melukis.</p><a href="https://forms.gle/LHqy9YPwgEsttmXJ9" target="_blank">Daftar Melukis</a></article>
+<article class="card"><b>09</b><div class="icon">🎨</div><h3>Festival Melukis</h3><p>Form pendaftaran peserta Festival Melukis.</p><a href="https://forms.gle/LHqy9YPwgEsttmXJ9" target="_blank"onclick="trackFormClick('Melukis')">Daftar Melukis</a></article>
 
-<article class="card"><b>10</b><div class="icon">🖍️</div><h3>Festival Mewarnai</h3><p>Form pendaftaran peserta Festival Mewarnai.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">Daftar Mewarnai</a></article>
+<article class="card"><b>10</b><div class="icon">🖍️</div><h3>Festival Mewarnai</h3><p>Form pendaftaran peserta Festival Mewarnai.</p><a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank"onclick="trackFormClick('Mewarnai')">Daftar Mewarnai</a></article>
 
-<article class="card"><b>11</b><div class="icon">🤸</div><h3>Festival Senam</h3><p>Form pendaftaran peserta Festival Senam.</p><a href="https://forms.gle/6czhPERNUgDieDrq5" target="_blank">Daftar Senam</a></article>
+<article class="card"><b>11</b><div class="icon">🤸</div><h3>Festival Senam</h3><p>Form pendaftaran peserta Festival Senam.</p><a href="https://forms.gle/6czhPERNUgDieDrq5" target="_blank"onclick="trackFormClick('Senam')">Daftar Senam</a></article>
 
-<article class="card"><b>12</b><div class="icon">🚴</div><h3>Tour de Bulungan (Gowes)</h3><p>Form pendaftaran peserta Tour de Bulungan atau Gowes.</p><a href="https://forms.gle/xnT66Bm7c6bYKhTK8" target="_blank">Daftar Gowes</a></article>
+<article class="card"><b>12</b><div class="icon">🚴</div><h3>Tour de Bulungan (Gowes)</h3><p>Form pendaftaran peserta Tour de Bulungan atau Gowes.</p><a href="https://forms.gle/xnT66Bm7c6bYKhTK8" target="_blank"onclick="trackFormClick('Gowes')">Daftar Gowes</a></article>
       </div>
     </section>
 
@@ -383,7 +389,37 @@ LOGIN (Admin)
 
         <span class="umkm-status">Terverifikasi</span>
     </div>
+<!-- 10 -->
+<div class="umkm-card">
+    <img src="assets/nyemek.jpeg" alt="Mie Nyemek Andini">
 
+    <div class="umkm-detail">
+        <h3>Mie Nyemek Andini</h3>
+        <p><strong>Kategori:</strong> Makanan Berat</p>
+
+        <span class="no-instagram">
+            Instagram tidak tersedia
+        </span>
+    </div>
+
+    <span class="umkm-status">Terverifikasi</span>
+</div>
+
+<!-- 11 -->
+<div class="umkm-card">
+    <img src="assets/imbut.png" alt="Imbut Imbut Angkringan">
+
+    <div class="umkm-detail">
+        <h3>Imbut Imbut Angkringan</h3>
+        <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+        <span class="no-instagram">
+            Instagram tidak tersedia
+        </span>
+    </div>
+
+    <span class="umkm-status">Terverifikasi</span>
+</div>
 </div>
 
         </div>
@@ -418,6 +454,7 @@ function loginAdmin(){
         document.getElementById("loginModal").style.display = "none";
         document.getElementById("adminDashboardModal").style.display = "flex";
 
+        loadDashboardData();
     } else {
         alert("Username atau Password salah.");
     }
@@ -465,6 +502,107 @@ window.onclick = function(event){
 
 }
 
+// ================= KIRIM DATA VISITOR =================
+
+fetch("https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        type: "visitor",
+        ip: "",
+        device: navigator.platform,
+        browser: navigator.userAgent
+    })
+});
+function trackFormClick(formName){
+    fetch("https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            type: "click",
+            form: formName
+        })
+    });
+}
+// ================= AMBIL DASHBOARD =================
+
+async function loadDashboard(){
+
+    const url="https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec?action=stats";
+
+    const response=await fetch(url);
+
+    const data=await response.json();
+
+    document.getElementById("totalVisitor").innerHTML=data.totalVisitor;
+
+    document.getElementById("totalClick").innerHTML=data.totalClicks;
+
+    document.getElementById("totalUMKM").innerHTML=data.totalUMKM;
+
+    document.getElementById("totalEvent").innerHTML=data.totalEvent;
+
+    let html="";
+
+    data.popularForms.forEach(item=>{
+
+        html+=`<p>🏆 ${item[0]} — ${item[1]} Lihat</p>`;
+
+    });
+
+    document.getElementById("popularForms").innerHTML=html;
+
+}
+
+loadDashboard();
+const API_URL = "https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec";
+
+async function loadDashboardData(){
+
+    const response = await fetch(API_URL + "?action=stats");
+    const data = await response.json();
+
+    document.getElementById("totalVisitor").innerText = data.totalVisitor;
+    document.getElementById("totalClick").innerText = data.totalClicks;
+    document.getElementById("totalUMKM").innerText = data.totalUMKM;
+    document.getElementById("totalEvent").innerText = data.totalEvent;
+
+    let chartHTML = "";
+
+    data.visitorChart.forEach(item => {
+        chartHTML += `
+            <div class="chart-item">
+                <div class="chart-bar" style="height:${Math.max(item.visitor * 12, 20)}px"></div>
+                <small>${item.date}</small>
+                <b>${item.visitor}</b>
+            </div>
+        `;
+    });
+
+    document.getElementById("visitorChart").innerHTML = chartHTML;
+
+    document.getElementById("deviceStats").innerHTML = `
+        <div>🤖 Android <b>${data.devices.Android}</b></div>
+        <div>🍎 iPhone <b>${data.devices.iPhone}</b></div>
+        <div>💻 Desktop <b>${data.devices.Desktop}</b></div>
+        <div>📱 Other <b>${data.devices.Other}</b></div>
+    `;
+
+    let popularHTML = "";
+
+    data.popularForms.forEach(item => {
+        popularHTML += `<p>🏆 ${item[0]} — ${item[1]} klik</p>`;
+    });
+
+    document.getElementById("popularForms").innerHTML = popularHTML || "<p>Belum ada klik.</p>";
+}
+function trackFormClick(formName){
+    fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            type: "click",
+            form: formName
+        })
+    });
+}
 </script>
 
 </body>
