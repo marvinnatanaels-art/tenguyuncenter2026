@@ -395,8 +395,15 @@ z-index:99999;
 
 width:430px;
 
-background:white;
+background:linear-gradient(
+145deg,
+#2d1248,
+#151515
+);
 
+border:1px solid rgba(255,196,0,.28);
+
+color:white;
 padding:45px;
 
 border-radius:22px;
@@ -920,10 +927,6 @@ transform:translateY(-2px);
         height:180px;
     }
 }
-.btn-daftar-umkm{
-    position: relative;
-    top: -8px;
-}
 .mini-chart{
     height:220px;
     display:flex;
@@ -945,8 +948,10 @@ transform:translateY(-2px);
 }
 
 .chart-bar{
-    width:100%;
-    max-width:42px;
+    width:42px;
+    min-height:8px;
+    border-radius:10px 10px 0 0;
+    transition:.35s;
     min-height:20px;
     border-radius:10px 10px 4px 4px;
     background:#FFC400;
@@ -983,4 +988,669 @@ transform:translateY(-2px);
 .device-stats b{
     color:#FFC400;
     font-size:22px;
+}
+.event-logo{
+    width:170px;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+.event-logo img{
+    width:100%;
+    display:block;
+}
+.card:hover .event-logo{
+
+transform:scale(1.06);
+
+transition:.3s;
+
+}
+/* ================= UMKM POSTER CARD ================= */
+
+.card.umkm-poster-card{
+    min-height: 420px;
+    padding: 34px 28px 28px;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid rgba(255,196,0,.55);
+    background:
+        radial-gradient(circle at top right, rgba(168,85,247,.34), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(255,196,0,.16), transparent 32%),
+        linear-gradient(145deg, #2d1248 0%, #151019 48%, #070707 100%);
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.55),
+        0 0 28px rgba(255,196,0,.10);
+}
+
+.card.umkm-poster-card:hover{
+    transform: translateY(-10px);
+    border-color: #FFC400;
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.65),
+        0 0 35px rgba(255,196,0,.32),
+        0 0 25px rgba(168,85,247,.22);
+}
+
+.card.umkm-poster-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(255,196,0,.16), transparent 20%),
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,.05) 45%, transparent 70%);
+    pointer-events:none;
+}
+
+.card.umkm-poster-card b{
+    z-index:2;
+    padding: 16px 20px;
+    border-radius: 22px 0 20px 0;
+    background:#FFC400;
+    color:#111;
+    font-size: 24px;
+    font-weight:900;
+}
+
+.umkm-poster-card .event-logo{
+    position:relative;
+    z-index:1;
+    width: 205px;
+    margin: 10px auto 18px;
+    filter: drop-shadow(0 16px 22px rgba(0,0,0,.55));
+    transition:.3s;
+}
+
+.umkm-poster-card:hover .event-logo{
+    transform: scale(1.05);
+}
+
+.umkm-poster-card .event-logo img{
+    width:100%;
+    display:block;
+}
+
+.event-divider{
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin: 2px auto 18px;
+    color:#FFC400;
+}
+
+.event-divider span{
+    width:72px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, #FFC400);
+}
+
+.event-divider span:last-child{
+    background:linear-gradient(90deg, #FFC400, transparent);
+}
+
+.event-divider i{
+    font-style:normal;
+    font-size:18px;
+    color:#FFC400;
+}
+
+.card.umkm-poster-card h3{
+    position:relative;
+    z-index:1;
+    min-height:auto;
+    margin:0 0 8px;
+    color:#FFC400;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:.3px;
+    text-transform:uppercase;
+}
+
+.card.umkm-poster-card h4{
+    position:relative;
+    z-index:1;
+    margin:0 0 14px;
+    color:#c084fc;
+    font-size:17px;
+    font-weight:800;
+}
+
+.card.umkm-poster-card p{
+    position:relative;
+    z-index:1;
+    min-height:auto;
+    margin:0 auto 22px;
+    max-width:300px;
+    color:#e8e8e8;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.umkm-poster-buttons{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:0;
+}
+
+.umkm-poster-buttons a,
+.umkm-poster-buttons button{
+    height:50px;
+    border-radius:14px;
+    background:#FFC400;
+    color:#111;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 14px;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:900;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(255,196,0,.20);
+    transition:.25s;
+}
+
+.umkm-poster-buttons a:hover,
+.umkm-poster-buttons button:hover{
+    background:#FFD84D;
+    transform:translateY(-3px);
+    box-shadow:0 14px 32px rgba(255,196,0,.32);
+}
+
+/* Matikan efek naik khusus tombol lama kalau masih ada */
+.umkm-poster-card .btn-daftar-umkm{
+    top: 0;
+}
+
+@media(max-width:640px){
+    .card.umkm-poster-card{
+        min-height:auto;
+        padding:32px 22px 24px;
+    }
+
+    .umkm-poster-card .event-logo{
+        width:185px;
+    }
+
+    .umkm-poster-buttons{
+        grid-template-columns:1fr;
+    }
+}
+/* PERBAIKAN BUTTON UMKM AGAR SEJAJAR */
+
+.umkm-poster-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: stretch;
+    margin-top: 24px;
+}
+
+.umkm-poster-buttons a,
+.umkm-poster-buttons button{
+    margin: 0 !important;
+    position: static !important;
+    top: auto !important;
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #FFC400;
+    color: #111;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+.umkm-poster-buttons:has(a:only-child),
+.umkm-poster-buttons:has(button:only-child){
+    grid-template-columns: 1fr;
+}
+
+.umkm-poster-buttons a:only-child,
+.umkm-poster-buttons button:only-child{
+    width: 100%;
+}
+.event-logo{
+    width:180px;
+    height:180px;
+    margin:0 auto 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.event-logo img{
+    width: 100%;
+    height:100%;
+    object-fit:contain;
+}
+/* ================= COMING SOON ================= */
+
+.coming-modal{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(10px);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+padding:30px;
+
+}
+
+.coming-box{
+
+width:min(1000px,100%);
+
+max-height:90vh;
+
+overflow:auto;
+
+background:linear-gradient(145deg,#2b1346,#101010);
+
+border:1px solid rgba(255,196,0,.35);
+
+border-radius:24px;
+
+padding:40px;
+
+position:relative;
+
+}
+
+.coming-close{
+
+position:absolute;
+
+right:20px;
+
+top:20px;
+
+width:44px;
+
+height:44px;
+
+border:none;
+
+border-radius:50%;
+
+background:#FFC400;
+
+font-size:24px;
+
+cursor:pointer;
+
+}
+
+.coming-box h2{
+
+text-align:center;
+
+color:#FFC400;
+
+font-size:38px;
+
+margin-bottom:10px;
+
+}
+
+.coming-desc{
+
+text-align:center;
+
+color:#ddd;
+
+margin-bottom:35px;
+
+line-height:1.7;
+
+}
+
+.coming-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.coming-card{
+
+background:#181818;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:18px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.coming-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FFC400;
+
+}
+
+.coming-card img{
+
+width:120px;
+
+margin:auto;
+
+display:block;
+
+}
+
+.coming-card h3{
+
+color:white;
+
+font-size:18px;
+
+margin:12px 0;
+
+}
+
+.coming-card span{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#3d2b00;
+
+color:#FFC400;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:bold;
+
+}
+
+.coming-footer{
+
+margin-top:35px;
+
+text-align:center;
+
+}
+
+.coming-footer p{
+
+color:#ddd;
+
+}
+
+.coming-footer a{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:12px 22px;
+
+background:#FFC400;
+
+color:#111;
+
+text-decoration:none;
+
+font-weight:800;
+
+border-radius:12px;
+
+}
+
+@media(max-width:700px){
+
+.coming-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ================= COMING SOON ================= */
+
+.coming-modal{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(10px);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+padding:30px;
+
+}
+
+.coming-box{
+
+width:min(1000px,100%);
+
+max-height:90vh;
+
+overflow:auto;
+
+background:linear-gradient(145deg,#2b1346,#101010);
+
+border:1px solid rgba(255,196,0,.35);
+
+border-radius:24px;
+
+padding:40px;
+
+position:relative;
+
+}
+
+.coming-close{
+
+position:absolute;
+
+right:20px;
+
+top:20px;
+
+width:44px;
+
+height:44px;
+
+border:none;
+
+border-radius:50%;
+
+background:#FFC400;
+
+font-size:24px;
+
+cursor:pointer;
+
+}
+
+.coming-box h2{
+
+text-align:center;
+
+color:#FFC400;
+
+font-size:38px;
+
+margin-bottom:10px;
+
+}
+
+.coming-desc{
+
+text-align:center;
+
+color:#ddd;
+
+margin-bottom:35px;
+
+line-height:1.7;
+
+}
+
+.coming-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.coming-card{
+
+background:#181818;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:18px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.coming-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#FFC400;
+
+}
+
+.coming-card img{
+
+width:120px;
+
+margin:auto;
+
+display:block;
+
+}
+
+.coming-card h3{
+
+color:white;
+
+font-size:18px;
+
+margin:12px 0;
+
+}
+
+.coming-card span{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#3d2b00;
+
+color:#FFC400;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:bold;
+
+}
+
+.coming-footer{
+
+margin-top:35px;
+
+text-align:center;
+
+}
+
+.coming-footer p{
+
+color:#ddd;
+
+}
+
+.coming-footer a{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:12px 22px;
+
+background:#FFC400;
+
+color:#111;
+
+text-decoration:none;
+
+font-weight:800;
+
+border-radius:12px;
+
+}
+
+@media(max-width:700px){
+
+.coming-grid{
+
+grid-template-columns:1fr;
+
+}
+
 }
