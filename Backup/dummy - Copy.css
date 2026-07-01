@@ -1290,7 +1290,7 @@ transition:.3s;
     grid-template-columns:210px 1fr;
     gap:30px;
     align-items:center;
-    text-align:center;
+    text-align:left;
 }
 
 .gowes-bike{
@@ -1503,78 +1503,4 @@ transition:.3s;
     .gowes-map img{
         height:260px;
     }
-}
-/* ================= UMKM COMING SOON POPUP ================= */
-
-.umkm-coming-modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:999999;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(10px);
-    justify-content:center;
-    align-items:center;
-    padding:24px;
-}
-
-.umkm-coming-box{
-    position:relative;
-    width:min(520px,100%);
-    padding:38px 30px;
-    text-align:center;
-    border-radius:26px;
-    border:1px solid rgba(255,196,0,.45);
-    background:
-        radial-gradient(circle at top right, rgba(168,85,247,.32), transparent 38%),
-        linear-gradient(145deg,#2b1248,#0d0d0d);
-    box-shadow:0 35px 90px rgba(0,0,0,.7);
-}
-
-.umkm-coming-close{
-    position:absolute;
-    top:16px;
-    right:16px;
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:#FFC400;
-    color:#111;
-    font-size:26px;
-    font-weight:900;
-    cursor:pointer;
-}
-
-.umkm-coming-box img{
-    width:190px;
-    height:190px;
-    object-fit:contain;
-    margin-bottom:12px;
-    filter:drop-shadow(0 18px 24px rgba(0,0,0,.55));
-}
-
-.umkm-coming-box h2{
-    margin:0 0 12px;
-    color:#FFC400;
-    font-size:32px;
-    font-weight:900;
-}
-
-.umkm-coming-box p{
-    color:#ddd;
-    line-height:1.7;
-    margin-bottom:22px;
-}
-
-.umkm-coming-box a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 24px;
-    border-radius:14px;
-    background:#FFC400;
-    color:#111;
-    text-decoration:none;
-    font-weight:900;
 }

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumentasi - Tenguyun Fest Organizer 2026</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#06111f;color:white}
+a{text-decoration:none;color:inherit}
+.navbar{position:fixed;top:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(3,10,20,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:42px;height:42px;object-fit:contain}
+.brand h1{font-size:18px}
+.brand p{font-size:11px;color:#d9a441;letter-spacing:1.5px}
+nav{display:flex;gap:26px;font-size:14px}
+nav a:hover{color:#d9a441}
+.home-btn{border:1px solid #d9a441;color:#d9a441;padding:10px 18px;border-radius:10px;font-weight:800;font-size:13px}
+
+.hero{padding:130px 7% 70px;background:linear-gradient(90deg,rgba(3,10,20,.96),rgba(3,10,20,.7)),url("assets/header-cover.png") center/cover no-repeat}
+.hero span{color:#d9a441;font-weight:800}
+.hero h1{font-size:54px;margin-top:14px;text-transform:uppercase}
+.hero p{max-width:700px;margin-top:16px;color:#d1d5db;line-height:1.8;font-size:17px}
+
+section{padding:70px 7%}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title span{color:#d9a441;font-weight:800}
+.section-title h2{font-size:34px;margin-top:8px}
+
+.main-video{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.video-card{height:360px;border-radius:24px;background:url("assets/highlight.jpg") center/cover no-repeat;position:relative;overflow:hidden}
+.video-card::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
+.play span{width:78px;height:78px;background:white;color:#06111f;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;padding-left:5px}
+.video-text span{color:#d9a441;font-weight:800}
+.video-text h2{font-size:36px;margin-top:10px}
+.video-text p{color:#d1d5db;line-height:1.8;margin-top:15px}
+.video-text a{display:inline-block;margin-top:22px;background:#d9a441;color:#06111f;padding:13px 22px;border-radius:12px;font-weight:800}
+
+.activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.activity-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden;transition:.25s}
+.activity-card:hover{transform:translateY(-5px);border-color:#d9a441}
+.activity-img{height:170px;background:#111;position:relative}
+.activity-img img{width:100%;height:100%;object-fit:cover}
+.activity-img b{position:absolute;top:12px;left:12px;background:#d9a441;color:#06111f;padding:7px 11px;border-radius:999px;font-size:12px}
+.activity-content{padding:18px}
+.activity-content h3{font-size:20px}
+.activity-content p{color:#d1d5db;font-size:14px;line-height:1.6;margin-top:8px}
+.activity-meta{display:flex;justify-content:space-between;margin-top:14px;color:#d9a441;font-size:13px;font-weight:800}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery-grid img{width:100%;height:180px;object-fit:cover;border-radius:18px;cursor:pointer;transition:.25s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+.detail-section{background:rgba(255,255,255,.04)}
+.detail-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:24px}
+.detail-card img{width:100%;height:330px;object-fit:cover;border-radius:20px}
+.detail-content h2{font-size:34px}
+.detail-content p{color:#d1d5db;line-height:1.8;margin-top:12px}
+.winner-list{margin-top:18px;display:grid;gap:10px}
+.winner-list div{background:rgba(255,255,255,.08);padding:14px;border-radius:14px}
+
+footer{padding:50px 7% 25px;background:#030a14;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:35px;color:#d1d5db}
+footer h3{color:white;margin-bottom:14px}
+footer p{line-height:1.7}
+.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:13px;color:#9ca3af}
+
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;align-items:center;justify-content:center;padding:20px}
+.lightbox img{max-width:95%;max-height:88vh;border-radius:16px}
+.lightbox button{position:absolute;top:20px;right:25px;width:42px;height:42px;border:none;border-radius:50%;font-size:25px;cursor:pointer}
+
+@media(max-width:900px){
+nav{display:none}
+.hero h1{font-size:38px}
+.main-video,.detail-card{grid-template-columns:1fr}
+.activity-grid{grid-template-columns:repeat(2,1fr)}
+.gallery-grid{grid-template-columns:repeat(2,1fr)}
+footer{grid-template-columns:1fr}
+}
+
+@media(max-width:520px){
+.navbar{padding:14px 5%}
+.hero{padding:110px 6% 55px}
+section{padding:55px 6%}
+.activity-grid{grid-template-columns:1fr}
+.gallery-grid img{height:130px}
+.video-card{height:240px}
+.detail-card img{height:220px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <img src="assets/logo-tfc.png" alt="Logo Tenguyun">
+    <div>
+      <h1>TENGUYUN</h1>
+      <p>FEST ORGANIZER 2026</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#video">Video</a>
+    <a href="#kegiatan">Kegiatan</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#mobile-legends">Mobile Legends</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <a href="index.html" class="home-btn">← Beranda</a>
+</header>
+
+<section class="hero">
+  <span>DOKUMENTASI RESMI</span>
+  <h1>Tenguyun Fest 2026</h1>
+  <p>
+    Halaman arsip kegiatan Tenguyun Fest Organizer 2026. 
+    Berisi dokumentasi foto, video highlight, daftar kegiatan, 
+    momen terbaik, serta rekam jejak pelaksanaan acara.
+  </p>
+</section>
+
+<section class="main-video" id="video">
+  <div class="video-card">
+    <div class="play"><span>▶</span></div>
+  </div>
+
+  <div class="video-text">
+    <span>VIDEO UTAMA</span>
+    <h2>Highlight Bupati & Aftermovie</h2>
+    <p>
+      Dokumentasi video utama Tenguyun Fest 2026, mulai dari sambutan Bupati,
+      pembukaan acara, suasana pengunjung, kompetisi, UMKM, hingga malam puncak.
+    </p>
+    <a href="https://www.instagram.com/tenguyunfest/" target="_blank">▶ Tonton Video</a>
+  </div>
+</section>
+
+<section id="kegiatan">
+  <div class="section-title">
+    <span>12 KEGIATAN</span>
+    <h2>Dokumentasi Per Kegiatan</h2>
+  </div>
+
+  <div class="activity-grid">
+
+    <a href="#umkm" class="activity-card">
+      <div class="activity-img"><img src="assets/event/umkm.png"><b>01</b></div>
+      <div class="activity-content">
+        <h3>Festival UMKM</h3>
+        <p>Pameran produk lokal, kuliner, dan tenant pilihan.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🎥 Video</span></div>
+      </div>
+    </a>
+
+    <a href="#panahan" class="activity-card">
+      <div class="activity-img"><img src="assets/event/panahan.png"><b>02</b></div>
+      <div class="activity-content">
+        <h3>Panahan</h3>
+        <p>Kompetisi panahan dan olahraga tradisional.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#airsoft" class="activity-card">
+      <div class="activity-img"><img src="assets/event/airsoft.png"><b>03</b></div>
+      <div class="activity-content">
+        <h3>Airsoft</h3>
+        <p>Airsoft competition dan dokumentasi tactical sport.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🎥 Video</span></div>
+      </div>
+    </a>
+
+    <a href="#mobile-legends" class="activity-card">
+      <div class="activity-img"><img src="assets/event/mole.png"><b>04</b></div>
+      <div class="activity-content">
+        <h3>Mobile Legends</h3>
+        <p>Turnamen Esport MLBB Tenguyun Fest 2026.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#drum" class="activity-card">
+      <div class="activity-img"><img src="assets/event/drum.png"><b>05</b></div>
+      <div class="activity-content">
+        <h3>Drum Battle</h3>
+        <p>Kompetisi drum battle dan penampilan panggung.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🎥 Video</span></div>
+      </div>
+    </a>
+
+    <a href="#sumpit" class="activity-card">
+      <div class="activity-img"><img src="assets/event/sumpit.png"><b>06</b></div>
+      <div class="activity-content">
+        <h3>Sumpit</h3>
+        <p>Permainan tradisional dan lomba sumpit.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#gasing" class="activity-card">
+      <div class="activity-img"><img src="assets/event/gasing.png"><b>07</b></div>
+      <div class="activity-content">
+        <h3>Gasing</h3>
+        <p>Dokumentasi lomba gasing tradisional.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#egrang" class="activity-card">
+      <div class="activity-img"><img src="assets/event/egrang.png"><b>08</b></div>
+      <div class="activity-content">
+        <h3>Egrang</h3>
+        <p>Keseruan perlombaan egrang Tenguyun Fest.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#melukis" class="activity-card">
+      <div class="activity-img"><img src="assets/event/mewarnai melukis.png"><b>09</b></div>
+      <div class="activity-content">
+        <h3>Festival Melukis</h3>
+        <p>Kreativitas peserta dalam festival melukis.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#mewarnai" class="activity-card">
+      <div class="activity-img"><img src="assets/event/mewarnai melukis.png"><b>10</b></div>
+      <div class="activity-content">
+        <h3>Festival Mewarnai</h3>
+        <p>Kegiatan seni dan kreativitas anak.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🏆 Juara</span></div>
+      </div>
+    </a>
+
+    <a href="#senam" class="activity-card">
+      <div class="activity-img"><img src="assets/event/senam.png"><b>11</b></div>
+      <div class="activity-content">
+        <h3>Senam Kreasi</h3>
+        <p>Senam kreasi Benuanta bersama peserta.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🎥 Video</span></div>
+      </div>
+    </a>
+
+    <a href="#malam-puncak" class="activity-card">
+      <div class="activity-img"><img src="assets/event/mlmpuncak.png"><b>12</b></div>
+      <div class="activity-content">
+        <h3>Malam Puncak</h3>
+        <p>Penutupan, hiburan, dan awarding night.</p>
+        <div class="activity-meta"><span>📸 Foto</span><span>🎥 Video</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="detail-section" id="mobile-legends">
+  <div class="section-title">
+    <span>DETAIL KEGIATAN</span>
+    <h2>Mobile Legends Tournament</h2>
+  </div>
+
+  <div class="detail-card">
+    <img src="assets/gallery/ml-hero.jpg" alt="Mobile Legends">
+
+    <div class="detail-content">
+      <h2>Esport MLBB Tenguyun Fest 2026</h2>
+      <p>
+        Turnamen Mobile Legends menjadi salah satu kegiatan yang menarik perhatian
+        peserta dan penonton. Dokumentasi ini memuat suasana pertandingan,
+        final match, awarding, serta momen terbaik selama turnamen berlangsung.
+      </p>
+
+      <div class="winner-list">
+        <div>🥇 Juara 1: Team Alpha</div>
+        <div>🥈 Juara 2: Team Bravo</div>
+        <div>🥉 Juara 3: Team Charlie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeri">
+  <div class="section-title">
+    <span>GALERI FOTO</span>
+    <h2>Dokumentasi Pilihan</h2>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="assets/gallery/1.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/2.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/3.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/4.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/5.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/6.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/ml-1.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/ml-2.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<footer id="kontak">
+  <div>
+    <h3>Tenguyun Fest Organizer 2026</h3>
+    <p>Halaman dokumentasi resmi kegiatan Tenguyun Fest 2026.</p>
+  </div>
+
+  <div>
+    <h3>Kontak Admin</h3>
+    <p>WhatsApp: 0813-2924-6252</p>
+    <p>Email: tenguyunfestorganizer@gmail.com</p>
+    <p>Instagram: @tenguyunfest</p>
+  </div>
+
+  <div>
+    <h3>Lokasi Acara</h3>
+    <p>Universitas Kaltara<br>Tanjung Selor, Bulungan<br>Kalimantan Utara</p>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tenguyun Fest Organizer. All Rights Reserved.
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+  <button onclick="closeLightbox()">×</button>
+  <img id="lightboxImg" src="">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById("lightboxImg").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+
+window.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closeLightbox();
+  }
+});
+</script>
+
+</body>
+</html>

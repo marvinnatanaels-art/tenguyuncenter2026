@@ -387,28 +387,28 @@ Daftar
 </div>
 
 </article>
-        <!-- 12. Coming Soon -->
+        <!-- 12. Gowes -->
          <article class="card umkm-poster-card">
 <b>12</b>
 
 <div class="event-logo">
-<img src="assets/event/cmingsoon.png">
+<img src="assets/event/gowes.png">
 </div>
 
 <div class="event-divider">
 <span></span><i>◇</i><span></span>
 </div>
 
-<h3>Event Menarik Lainnya</h3>
-<h4>Masih Banyak Lagi</h4>
+<h3>Tour de Bulungan</h3>
+<h4>GOWES</h4>
 
 <p>
-Klik 👇 melihat rangkaian event lainnya
+Klik 👇 untuk detail
 </p>
 
 <div class="card-buttons umkm-poster-buttons">
-<button type="button" onclick="openComingSoon()">
-    🚀 Coming Soon
+<button type="button" onclick="openGowesModal()">
+    🚴 Coming Soon
 </button>
 </div>
 
@@ -529,10 +529,10 @@ Klik 👇 melihat rangkaian event lainnya
 
     <!-- 1 -->
     <div class="umkm-card">
-        <img src="assets/cihonje.png" alt="Cihonje">
+        <img src="assets/cihonje.png" alt="Cihonje Crunchiest Chicken">
 
         <div class="umkm-detail">
-            <h3>Cihonje</h3>
+            <h3>Cihonje Crunchiest Chicken</h3>
             <p><strong>Kategori:</strong> Makanan Berat</p>
 
             <a href="https://www.instagram.com/cihonje_crunchiest_chicken//" target="_blank">
@@ -548,7 +548,7 @@ Klik 👇 melihat rangkaian event lainnya
         <img src="assets/larehome.png" alt="Lare Homewear">
 
         <div class="umkm-detail">
-            <h3>Lare Homewear</h3>
+            <h3>larehomewear.id</h3>
             <p><strong>Kategori:</strong> Fashion</p>
 
             <a href="https://www.instagram.com/larehomewear.id/" target="_blank">
@@ -697,6 +697,38 @@ Klik 👇 melihat rangkaian event lainnya
 
     <span class="umkm-status">Terverifikasi</span>
 </div>
+
+<!-- 12 -->
+<div class="umkm-card">
+        <img src="assets/oula.png" alt="Oula Coffee">
+
+        <div class="umkm-detail">
+            <h3>Oula Coffee</h3>
+            <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+            <a href="https://www.instagram.com/oula.coffee/" target="_blank">
+                Instagram
+            </a>
+        </div>
+
+        <span class="umkm-status">Terverifikasi</span>
+    </div>
+</div>
+
+<!-- 11 -->
+<div class="umkm-card">
+    <img src="assets/uty.png" alt="Uty Kitchen">
+
+    <div class="umkm-detail">
+        <h3>Uty Kitchen</h3>
+        <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+        <span class="no-instagram">
+            Instagram tidak tersedia
+        </span>
+    </div>
+
+    <span class="umkm-status">Terverifikasi</span>
 </div>
 
         </div>
@@ -901,113 +933,112 @@ function openComingSoon(){
 function closeComingSoon(){
     document.getElementById("comingSoonModal").style.display = "none";
 }
+function openGowesModal(){
+    document.getElementById("gowesModal").style.display = "flex";
+}
+
+function closeGowesModal(){
+    document.getElementById("gowesModal").style.display = "none";
+}   
 </script>
-<!-- ================= COMING SOON POPUP ================= -->
+<!-- ================= POPUP GOWES ================= -->
 
-<div id="comingSoonModal" class="coming-modal">
+<div id="gowesModal" class="gowes-modal">
+    <div class="gowes-box">
 
-    <div class="coming-box">
+        <button class="gowes-close" onclick="closeGowesModal()">×</button>
 
-        <button class="coming-close"
-            onclick="closeComingSoon()">
-            ×
-        </button>
+        <div class="gowes-header">
+            <img src="assets/event/gowes.png" alt="Tour de Bulungan" class="gowes-bike">
 
-        <h2>🎉 Event Lainnya Akan Segera Hadir</h2>
-
-        <p class="coming-desc">
-
-            Tenguyun Fest 2026 masih memiliki banyak rangkaian kegiatan
-            yang akan diumumkan secara bertahap.
-
-            Nantikan pembukaan pendaftaran berikutnya!
-
-        </p>
-
-        <div class="coming-grid">
-
-            <div class="coming-card">
-
-                <img src="assets/event/gowes.png">
-
-                <h3>Tour de Bulungan (Gowes)</h3>
-
-                <span>Segera Dibuka</span>
-
+            <div>
+                <h2>TOUR DE BULUNGAN</h2>
+                <h4>Cycling Event</h4>
+                <p>
+                    Tour de Bulungan adalah event bersepeda yang menghadirkan
+                    pengalaman menjelajahi keindahan alam, budaya, dan destinasi
+                    terbaik di Kabupaten Bulungan.
+                </p>
             </div>
-
-            <div class="coming-card">
-
-                <img src="assets/event/kirab.png">
-
-                <h3>Kirab Opening Ceremony</h3>
-
-                <span>Segera Dibuka</span>
-
-            </div>
-
-            <div class="coming-card">
-
-                <img src="assets/event/parade.png">
-
-                <h3>Parade Musik</h3>
-
-                <span>Segera Dibuka</span>
-
-            </div>
-
-            <div class="coming-card">
-
-                <img src="assets/event/entertain sport.png">
-
-                <h3>Entertain & Sport</h3>
-
-                <span>Segera Dibuka</span>
-
-            </div>
-
-            <div class="coming-card">
-
-                <img src="assets/event/mlmpuncak.png">
-
-                <h3>Malam Puncak</h3>
-
-                <span>Segera Dibuka</span>
-
-            </div>
-
-            <div class="coming-card">
-
-                <img src="assets/event/literasi.png">
-
-                <h3>Festival Literasi</h3>
-
-                <span>Segera Dibuka</span>
-
-            </div>
-
         </div>
 
-        <div class="coming-footer">
+        <div class="gowes-divider">
+            <span></span>
+            <i>🚴</i>
+            <span></span>
+        </div>
 
+        <div class="gowes-content">
+
+            <div class="gowes-left">
+
+                <div class="gowes-card">
+                    <h3>🚴 Tentang Gowes</h3>
+                    <p>
+                        Event gowes ini terbuka untuk masyarakat umum, komunitas
+                        sepeda, hingga pesepeda hobi. Nikmati rute yang seru,
+                        suasana kebersamaan, dan semangat hidup sehat bersama
+                        Tenguyun Fest.
+                    </p>
+                </div>
+
+                <div class="gowes-info">
+                    <div>
+                        <b>📅 Waktu Pelaksanaan</b>
+                        <p>Akan diumumkan segera</p>
+                    </div>
+
+                    <div>
+                        <b>📍 Lokasi Start / Finish</b>
+                        <p>Akan diumumkan segera</p>
+                    </div>
+
+                    <div>
+                        <b>👥 Peserta</b>
+                        <p>Terbuka untuk umum</p>
+                    </div>
+                </div>
+
+                <div class="gowes-card">
+                    <h3>🏆 Kategori</h3>
+
+                    <div class="gowes-tags">
+                        <span>Ditunggu Updatenyaa!!!</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gowes-right">
+
+                <h3>📍 Rute Gowes</h3>
+
+                <div class="gowes-map">
+                    <img src="assets/event/map.png" alt="Rute Gowes">
+
+                </div>
+
+                <div class="route-note">
+                    🔒 Rute masih dalam tahap finalisasi. Nantikan update rute
+                    lengkap dan titik-titik menarik yang akan dilalui.
+                    <div class="gowes-footer">
             <p>
-
-                📢 Ikuti Instagram resmi kami untuk
-                mendapatkan informasi pembukaan pendaftaran.
-
+                📢 Ikuti Instagram resmi kami untuk mendapatkan informasi
+                pembukaan pendaftaran Tour de Bulungan.
             </p>
 
-            <a href="https://www.instagram.com/tenguyunfest/"
-               target="_blank">
-
-               📷 @tenguyunfest
-
+            <a href="https://www.instagram.com/tenguyunfest/" target="_blank">
+                📷 @tenguyunfest
             </a>
+        </div>
+                </div>
+                
+
+            </div>
 
         </div>
 
     </div>
-
 </div>
 </body>
 </html>
