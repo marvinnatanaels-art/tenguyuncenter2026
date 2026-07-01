@@ -123,9 +123,9 @@ LOGIN (Admin)
             Daftar UMKM
         </a>
 
-        <button type="button" onclick="openUmkmModal()">
-            List UMKM
-        </button>
+<button type="button" onclick="openUmkmComingSoon()">
+    Tennant
+</button>
     </div>
 </article>
         <!-- 2. Panahan -->
@@ -227,7 +227,9 @@ Pendaftaran peserta Drum Battle Competition.
 </p>
 
 <div class="card-buttons umkm-poster-buttons">
-<button disabled>Coming Soon</button>
+<a href="https://forms.gle/KXaU59TAHLBmzVCr6" target="_blank" onclick="trackFormClick('Drum Battle')">
+Daftar
+</a>
 </div>
 
 </article>
@@ -243,7 +245,7 @@ Pendaftaran peserta Drum Battle Competition.
 <span></span><i>◇</i><span></span>
 </div>
 
-<h3>Sumpit</h3>
+<h3>Sumpitan</h3>
 <h4>Traditional Games</h4>
 
 <p>
@@ -251,7 +253,7 @@ Pendaftaran peserta lomba Sumpit Traditional.
 </p>
 
 <div class="card-buttons umkm-poster-buttons">
-<a href="https://forms.gle/X7jCbmQryb3FjUhS9" target="_blank" onclick="trackFormClick('Sumpit')">
+<a href="https://forms.gle/6bLUhzw59QtVLAhEA" target="_blank" onclick="trackFormClick('Sumpit')">
 Daftar
 </a>
 </div>
@@ -277,7 +279,7 @@ Pendaftaran peserta lomba Gasing Traditional.
 </p>
 
 <div class="card-buttons umkm-poster-buttons">
-<a href="https://forms.gle/X7jCbmQryb3FjUhS9" target="_blank">
+<a href="https://forms.gle/UJzsMRDteaLFTUKL6" target="_blank" onclick="trackFormClick('Gasing')">
 Daftar
 </a>
 </div>
@@ -303,7 +305,7 @@ Pendaftaran peserta lomba Egrang Traditional.
 </p>
 
 <div class="card-buttons umkm-poster-buttons">
-<a href="https://forms.gle/X7jCbmQryb3FjUhS9" target="_blank">
+<a href="https://forms.gle/2ovCyKWNYfzUfJo56" target="_blank">
 Daftar
 </a>
 </div>
@@ -314,7 +316,7 @@ Daftar
 <b>09</b>
 
 <div class="event-logo">
-<img src="assets/event/mewarnai melukis.png">
+<img src="assets/event/melukis.png">
 </div>
 
 <div class="event-divider">
@@ -340,7 +342,7 @@ Daftar
 <b>10</b>
 
 <div class="event-logo">
-<img src="assets/event/mewarnai melukis.png">
+<img src="assets/event/mewarnai.png">
 </div>
 
 <div class="event-divider">
@@ -739,7 +741,26 @@ Klik 👇 untuk detail
 
     </div>
 </div>
+<!-- ================= POPUP UMKM COMING SOON ================= -->
 
+<div id="umkmComingSoonModal" class="umkm-coming-modal">
+    <div class="umkm-coming-box">
+        <button class="umkm-coming-close" onclick="closeUmkmComingSoon()">×</button>
+
+        <img src="assets/event/umkm.png" alt="Festival UMKM">
+
+        <h2>List UMKM Coming Soon</h2>
+
+        <p>
+            Daftar tenant UMKM Tenguyun Fest sedang dalam proses kurasi
+            dan akan segera diumumkan.
+        </p>
+
+        <a href="https://www.instagram.com/tenguyunfest/" target="_blank">
+            📷 Pantau di Instagram
+        </a>
+    </div>
+</div>
 
 <!-- ================= JAVASCRIPT ================= -->
 
@@ -796,6 +817,7 @@ window.onclick = function(event){
     const loginModal = document.getElementById("loginModal");
     const dashboardModal = document.getElementById("adminDashboardModal");
     const umkmModal = document.getElementById("umkmModal");
+    const umkmComingSoonModal = document.getElementById("umkmComingSoonModal");
 
     if(event.target === loginModal){
         closeLogin();
@@ -813,6 +835,9 @@ window.onclick = function(event){
 if(event.target===comingModal){
 
 closeComingSoon();
+if(event.target === umkmComingSoonModal){
+    closeUmkmComingSoon();
+}
 
 }
 
@@ -940,6 +965,13 @@ function openGowesModal(){
 function closeGowesModal(){
     document.getElementById("gowesModal").style.display = "none";
 }   
+function openUmkmComingSoon(){
+    document.getElementById("umkmComingSoonModal").style.display = "flex";
+}
+
+function closeUmkmComingSoon(){
+    document.getElementById("umkmComingSoonModal").style.display = "none";
+}
 </script>
 <!-- ================= POPUP GOWES ================= -->
 
@@ -953,7 +985,7 @@ function closeGowesModal(){
 
             <div>
                 <h2>TOUR DE BULUNGAN</h2>
-                <h4>Cycling Event</h4>
+                <h4>Gowes Event</h4>
                 <p>
                     Tour de Bulungan adalah event bersepeda yang menghadirkan
                     pengalaman menjelajahi keindahan alam, budaya, dan destinasi

@@ -1578,3 +1578,150 @@ transition:.3s;
     text-decoration:none;
     font-weight:900;
 }
+.wide-coming-card{
+    grid-column: span 3;
+    min-height: 460px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.wide-coming-content h3{
+    color:#FFC400;
+    font-size:48px;
+    margin:0 0 12px;
+    font-weight:900;
+}
+
+.wide-coming-content h2{
+    color:#fff;
+    font-size:42px;
+    margin:0 0 10px;
+    font-weight:900;
+}
+
+.wide-coming-content h4{
+    color:#c084fc;
+    font-size:28px;
+    margin:0 0 20px;
+}
+
+.wide-coming-content p{
+    color:#ddd;
+    font-size:24px;
+    margin-bottom:24px;
+}
+
+.wide-coming-content span{
+    display:inline-block;
+    padding:14px 30px;
+    background:#FFC400;
+    color:#111;
+    border-radius:999px;
+    font-weight:900;
+}
+
+@media(max-width:1000px){
+    .wide-coming-card{
+        grid-column:span 2;
+    }
+}
+
+@media(max-width:640px){
+    .wide-coming-card{
+        grid-column:span 1;
+    }
+}
+.wide-coming-card{
+    grid-column: span 3;
+    min-height: 460px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 22px;
+    border: 1px solid rgba(255,196,0,.65);
+    background:#000;
+}
+
+.wide-coming-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.65;
+}
+
+.wide-coming-overlay{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    min-height:460px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(
+        180deg,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.72)
+    );
+}
+
+.wide-coming-overlay h3{
+    color:#FFC400;
+    font-size:50px;
+    margin:0 0 10px;
+    font-weight:900;
+}
+
+.wide-coming-overlay h2{
+    color:#fff;
+    font-size:42px;
+    margin:0 0 8px;
+    font-weight:900;
+}
+
+.wide-coming-overlay h4{
+    color:#c084fc;
+    font-size:28px;
+    margin:0 0 18px;
+}
+
+.wide-coming-overlay p{
+    color:#eee;
+    font-size:24px;
+    margin:0 0 22px;
+}
+
+.wide-coming-overlay span{
+    padding:14px 30px;
+    background:#FFC400;
+    color:#111;
+    border-radius:999px;
+    font-weight:900;
+}
+
+@media(max-width:1000px){
+    .wide-coming-card{
+        grid-column:span 2;
+    }
+}
+
+@media(max-width:640px){
+    .wide-coming-card{
+        grid-column:span 1;
+    }
+
+    .wide-coming-overlay h3{
+        font-size:34px;
+    }
+
+    .wide-coming-overlay h2{
+        font-size:28px;
+    }
+}
