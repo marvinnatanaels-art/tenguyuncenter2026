@@ -58,8 +58,8 @@
       <!-- Ganti file logo di assets/logo-tfc.png kalau mau pakai logo lain -->
       <img class="brand-logo" src="assets/logo-tfc.png" alt="Logo Tenguyun" />
       <div>
-        <h1>TENGUYUN</h1>
-        <p>FORM CENTER</p>
+        <h1>TENGUYUN FEST</h1>
+        <p>ORGANIZER</p>
       </div>
     </div>
 
@@ -123,7 +123,7 @@ LOGIN (Admin)
             Daftar UMKM
         </a>
 
-<button type="button" onclick="openUmkmComingSoon()">
+<button type="button" onclick="openUmkmModal()">
     Tennant
 </button>
     </div>
@@ -375,8 +375,8 @@ Daftar
 <span></span><i>◇</i><span></span>
 </div>
 
-<h3>Senam Kreasi</h3>
-<h4>Benuanta</h4>
+<h3>Festival Senam</h3>
+<h4>Dance Competition</h4>
 
 <p>
 Pendaftaran peserta Festival Senam.
@@ -414,6 +414,45 @@ Klik 👇 untuk detail
 </button>
 </div>
 
+</article>
+        <!-- 13. Karnaval Kreasi -->
+         <article class="card umkm-poster-card">
+<b>13</b>
+
+<div class="event-logo">
+<img src="assets/event/karnaval.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Karnaval Kreasi</h3>
+<h4>Budaya Tenguyun</h4>
+
+<p>
+Pendaftaran peserta Karnaval Kreasi.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/p2DBhVW2XyvJ1HCQA" target="_blank">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- Kartu Coming Soon -->
+
+<article class="card wide-coming-card">
+    <img src="assets/event/comingsoon.png" alt="Coming Soon" class="wide-coming-bg">
+
+    <div class="wide-coming-overlay">
+        <h3>COMING SOON</h3>
+        <h2>Tenguyun Fest 2026</h2>
+        <h4>Road To Birau</h4>
+        <p>Festival Budaya Bulungan</p>
+        <span>Save The Date</span>
+    </div>
 </article>
 
       </div>
@@ -524,214 +563,392 @@ Klik 👇 untuk detail
                 <p>Daftar tenant yang telah terdaftar pada Tenguyun Fest.</p>
             </div>
         </div>
+<div class="umkm-tools">
+    <div class="umkm-search-box">
+        <span>🔍</span>
+        <input
+            type="text"
+            id="umkmSearch"
+            placeholder="Cari nama UMKM atau kategori..."
+            oninput="filterUmkmTenant()">
+    </div>
 
+    <div class="umkm-filter">
+        <button class="active" onclick="setUmkmCategory('Semua', this)">Semua</button>
+        <button onclick="setUmkmCategory('Minuman Kopi', this)">Kopi</button>
+        <button onclick="setUmkmCategory('Makanan Berat', this)">Makanan Berat</button>
+        <button onclick="setUmkmCategory('Minuman Lain', this)">Minuman Lain</button>
+        <button onclick="setUmkmCategory('Makanan Ringan', this)">Snack</button>
+        <button onclick="setUmkmCategory('Fashion', this)">Fashion, Acc, dll</button>
+    </div>
+</div>
+
+<div id="umkmEmpty" class="umkm-empty">
+    UMKM tidak ditemukan.
+</div>
         <div class="umkm-list">
 
-            <div class="umkm-list">
+            <!-- ================= MINUMAN KOPI ================= -->
+            <!-- 1 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/naoka.png" alt="Naoka Space">
 
-    <!-- 1 -->
-    <div class="umkm-card">
-        <img src="assets/cihonje.png" alt="Cihonje Crunchiest Chicken">
+                <div class="umkm-detail">
+                    <h3>Naoka Space</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
 
-        <div class="umkm-detail">
-            <h3>Cihonje Crunchiest Chicken</h3>
-            <p><strong>Kategori:</strong> Makanan Berat</p>
+                    <a href="https://www.instagram.com/naoka.space/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-            <a href="https://www.instagram.com/cihonje_crunchiest_chicken//" target="_blank">
-                Instagram
-            </a>
-        </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+            <!-- 2 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/zhiyu.png" alt="Zhiyu Space">
 
-    <!-- 2 -->
-    <div class="umkm-card">
-        <img src="assets/larehome.png" alt="Lare Homewear">
+                <div class="umkm-detail">
+                    <h3>Zhiyu Space</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
 
-        <div class="umkm-detail">
-            <h3>larehomewear.id</h3>
-            <p><strong>Kategori:</strong> Fashion</p>
+                    <a href="https://www.instagram.com/zhiyu.space/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-            <a href="https://www.instagram.com/larehomewear.id/" target="_blank">
-                Instagram
-            </a>
-        </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+            <!-- 3 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/oula.png" alt="Oula Coffee">
 
-    <!-- 3 -->
-    <div class="umkm-card">
-        <img src="assets/teakopling.jpeg" alt="Tea Kopling">
+                <div class="umkm-detail">
+                    <h3>Oula Coffee</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
 
-        <div class="umkm-detail">
-            <h3>Tea Kopling</h3>
-            <p><strong>Kategori:</strong> Minuman Lain</p>
+                    <a href="https://www.instagram.com/oula.coffee/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-            <a href="https://www.instagram.com/teakopling/" target="_blank">
-                Instagram
-            </a>
-        </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+            <!-- 4 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/takura.png" alt="Street Kopi Takura">
 
-    <!-- 4 -->
-    <div class="umkm-card">
-        <img src="assets/littlewhisk.png" alt="Little Whisk">
+                <div class="umkm-detail">
+                    <h3>Street Kopi Takura</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
 
-        <div class="umkm-detail">
-            <h3>Little Whisk</h3>
-            <p><strong>Kategori:</strong> Makanan Ringan</p>
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
 
-            <a href="https://www.instagram.com/little_whiskkkk/" target="_blank">
-                Instagram
-            </a>
-        </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
 
-    <!-- 5 -->
-    <div class="umkm-card">
-        <img src="assets/pentol.png" alt="Pentol Parahyangan">
+            <!-- ================= MAKANAN BERAT ================= -->
+            <!-- 6 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/cihonje.png" alt="Cihonje Chrunchiest Chicken">
 
-        <div class="umkm-detail">
-            <h3>PENTOL PRASMANAN PARAHYANGAN</h3>
-            <p><strong>Kategori:</strong> Makanan Ringan</p>
+                <div class="umkm-detail">
+                    <h3>Cihonje Chrunchiest Chicken</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
 
-            <span style="color:#888;">Instagram belum tersedia</span>
-        </div>
+                    <a href="https://www.instagram.com/cihonje_crunchiest_chicken/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-    <!-- 6 -->
-    <div class="umkm-card">
-        <img src="assets/naoka.png" alt="Naoka Space">
+            <!-- 6 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/babaica.jpeg" alt="Baba Ica">
 
-        <div class="umkm-detail">
-            <h3>Naoka Space</h3>
-            <p><strong>Kategori:</strong> Minuman Kopi</p>
+                <div class="umkm-detail">
+                    <h3>Baba Ica</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
 
-            <a href="https://www.instagram.com/naoka.space/" target="_blank">
-                Instagram
-            </a>
-        </div>
+                    <a href="https://www.instagram.com/alftastyfood.kaltara/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-    <!-- 7 -->
-    <div class="umkm-card">
-        <img src="assets/babaica.jpeg" alt="Baba Ica">
+            <!-- 7 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/nyemek.jpeg" alt="Mie Nyemek Andini">
 
-        <div class="umkm-detail">
-            <h3>Baba Ica</h3>
-            <p><strong>Kategori:</strong> Makanan Berat</p>
+                <div class="umkm-detail">
+                    <h3>Mie Nyemek Andini</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
 
-            <a href="https://www.instagram.com/alftastyfood.kaltara/" target="_blank">
-                Instagram
-            </a>
-        </div>
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-    <!-- 8 -->
-    <div class="umkm-card">
-        <img src="assets/sfit.jpeg" alt="Syafitri">
+            <!-- 8 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/mila.png" alt="Mila Asriani">
 
-        <div class="umkm-detail">
-            <h3>Syafitri</h3>
-            <p><strong>Kategori:</strong> Makanan Ringan</p>
+                <div class="umkm-detail">
+                    <h3>Mila Asriani</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
 
-            <span style="color:#888;">Instagram tidak tersedia</span>
-        </div>
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-    <!-- 9 -->
-    <div class="umkm-card">
-        <img src="assets/zhiyu.png" alt="Zhiyu Space">
+            <!-- 9 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/doyan.png" alt="Doyan Ngemil">
 
-        <div class="umkm-detail">
-            <h3>Zhiyu Space</h3>
-            <p><strong>Kategori:</strong> Minuman Kopi</p>
+                <div class="umkm-detail">
+                    <h3>Doyan Ngemil</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
 
-            <a href="https://www.instagram.com/zhiyu.space/" target="_blank">
-                Instagram
-            </a>
-        </div>
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
-<!-- 10 -->
-<div class="umkm-card">
-    <img src="assets/nyemek.jpeg" alt="Mie Nyemek Andini">
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-    <div class="umkm-detail">
-        <h3>Mie Nyemek Andini</h3>
-        <p><strong>Kategori:</strong> Makanan Berat</p>
+            <!-- 10 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pokpok.jpg" alt="Chicken Pokpok">
 
-        <span class="no-instagram">
-            Instagram tidak tersedia
-        </span>
-    </div>
+                <div class="umkm-detail">
+                    <h3>Chicken Pokpok</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
 
-    <span class="umkm-status">Terverifikasi</span>
-</div>
+                    <a href="https://www.instagram.com/chicken_pokpoktjs/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-<!-- 11 -->
-<div class="umkm-card">
-    <img src="assets/imbut.png" alt="Imbut Imbut Angkringan">
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-    <div class="umkm-detail">
-        <h3>Imbut Imbut Angkringan</h3>
-        <p><strong>Kategori:</strong> Makanan Ringan</p>
 
-        <span class="no-instagram">
-            Instagram tidak tersedia
-        </span>
-    </div>
+            <!-- ================= MINUMAN LAIN ================= -->
+            <!-- 11 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/teakopling.jpeg" alt="TEAKOPLING">
 
-    <span class="umkm-status">Terverifikasi</span>
-</div>
+                <div class="umkm-detail">
+                    <h3>TEAKOPLING</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
 
-<!-- 12 -->
-<div class="umkm-card">
-        <img src="assets/oula.png" alt="Oula Coffee">
+                    <a href="https://www.instagram.com/teakopling/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
 
-        <div class="umkm-detail">
-            <h3>Oula Coffee</h3>
-            <p><strong>Kategori:</strong> Minuman Kopi</p>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-            <a href="https://www.instagram.com/oula.coffee/" target="_blank">
-                Instagram
-            </a>
-        </div>
+            <!-- 12 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/alen.jpg" alt="Sumber Rezeki Aien">
 
-        <span class="umkm-status">Terverifikasi</span>
-    </div>
-</div>
+                <div class="umkm-detail">
+                    <h3>Sumber Rezeki Aien</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
 
-<!-- 11 -->
-<div class="umkm-card">
-    <img src="assets/uty.png" alt="Uty Kitchen">
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
 
-    <div class="umkm-detail">
-        <h3>Uty Kitchen</h3>
-        <p><strong>Kategori:</strong> Makanan Ringan</p>
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
-        <span class="no-instagram">
-            Instagram tidak tersedia
-        </span>
-    </div>
+            <!-- 13 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/fauget.jpeg" alt="Fauget Juice">
 
-    <span class="umkm-status">Terverifikasi</span>
-</div>
+                <div class="umkm-detail">
+                    <h3>Fauget Juice</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
+
+                    <a href="https://www.instagram.com/fauget.juice/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+
+            <!-- ================= MAKANAN RINGAN ================= -->
+
+            <!-- 14 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pukis.jpg" alt="Sweetpukis">
+
+                <div class="umkm-detail">
+                    <h3>Sweetpukis</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 15 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/littlewhisk.png" alt="Little Whisk">
+
+                <div class="umkm-detail">
+                    <h3>Little Whisk</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/little_whiskkkk/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 16 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pentol.png" alt="PENTOL PRASMANAN PARAHYANGAN">
+
+                <div class="umkm-detail">
+                    <h3>PENTOL PRASMANAN PARAHYANGAN</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 17 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/sfit.jpeg" alt="Syafitri">
+
+                <div class="umkm-detail">
+                    <h3>Syafitri</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 18 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/imbut.png" alt="Imbut Imbut Angkringan">
+
+                <div class="umkm-detail">
+                    <h3>Imbut Imbut Angkringan</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 19 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/uty.png" alt="Uty Kitchen">
+
+                <div class="umkm-detail">
+                    <h3>Uty Kitchen</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+
+            <!-- ================= FASHION, ACC, DLL ================= -->
+            <!-- 20 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/larehome.png" alt="Larehomewear.id">
+
+                <div class="umkm-detail">
+                    <h3>Larehomewear.id</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <a href="https://www.instagram.com/larehomewear.id/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 21 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/robbot.jpg" alt="Robbot Accessories Gadget">
+
+                <div class="umkm-detail">
+                    <h3>Robbot Accessories Gadget</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 22 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/ayanika.jpg" alt="Anyanika Tas Anyaman">
+
+                <div class="umkm-detail">
+                    <h3>Anyanika (Tas Anyaman)</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
 
         </div>
 
@@ -739,26 +956,6 @@ Klik 👇 untuk detail
             Informasi UMKM diperbarui secara manual oleh panitia.
         </div>
 
-    </div>
-</div>
-<!-- ================= POPUP UMKM COMING SOON ================= -->
-
-<div id="umkmComingSoonModal" class="umkm-coming-modal">
-    <div class="umkm-coming-box">
-        <button class="umkm-coming-close" onclick="closeUmkmComingSoon()">×</button>
-
-        <img src="assets/event/umkm.png" alt="Festival UMKM">
-
-        <h2>List UMKM Coming Soon</h2>
-
-        <p>
-            Daftar tenant UMKM Tenguyun Fest sedang dalam proses kurasi
-            dan akan segera diumumkan.
-        </p>
-
-        <a href="https://www.instagram.com/tenguyunfest/" target="_blank">
-            📷 Pantau di Instagram
-        </a>
     </div>
 </div>
 
@@ -972,6 +1169,45 @@ function openUmkmComingSoon(){
 function closeUmkmComingSoon(){
     document.getElementById("umkmComingSoonModal").style.display = "none";
 }
+let selectedUmkmCategory = "Semua";
+
+function setUmkmCategory(category, button){
+    selectedUmkmCategory = category;
+
+    document.querySelectorAll(".umkm-filter button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    filterUmkmTenant();
+}
+
+function filterUmkmTenant(){
+    const keyword = document.getElementById("umkmSearch").value.toLowerCase();
+    const cards = document.querySelectorAll(".umkm-card");
+    const emptyText = document.getElementById("umkmEmpty");
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+
+        const matchSearch = text.includes(keyword);
+        const matchCategory =
+            selectedUmkmCategory === "Semua" ||
+            text.includes(selectedUmkmCategory.toLowerCase());
+
+        if(matchSearch && matchCategory){
+            card.style.display = "grid";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    emptyText.style.display = visibleCount === 0 ? "block" : "none";
+}
 </script>
 <!-- ================= POPUP GOWES ================= -->
 
@@ -1072,5 +1308,11 @@ function closeUmkmComingSoon(){
 
     </div>
 </div>
+<a
+    href="https://www.instagram.com/tenguyunfest/   /"
+    target="_blank"
+    class="site-credit">
+    Designed with 🩵
+</a>
 </body>
 </html>

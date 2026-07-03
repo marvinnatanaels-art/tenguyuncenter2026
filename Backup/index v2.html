@@ -30,32 +30,23 @@
       <div class="admin-stats">
         <div><span>Total Visitor</span><b id="totalVisitor">0</b></div>
         <div><span>Total Klik Form</span><b id="totalClick">0</b></div>
-        <div><span>UMKM Terdaftar</span><b id="totalUMKM">25</b></div>
-        <div><span>Event Aktif</span><b id="totalEvent">13</b></div>
+        <div><span>UMKM Terdaftar</span><b id="totalUMKM">11</b></div>
+        <div><span>Event Aktif</span><b id="totalEvent">12</b></div>
       </div>
 
-      <div class="admin-panel chart-panel">
-
-    <div class="chart-header">
-        <h3>📈 Grafik Pengunjung 7 Hari</h3>
-    </div>
-
+      <div class="admin-panel">
+    <h3>📈 Grafik Pengunjung 7 Hari</h3>
     <div id="visitorChart" class="mini-chart"></div>
-
 </div>
 
-<div class="admin-bottom">
+<div class="admin-panel">
+    <h3>📱 Device Pengunjung</h3>
+    <div id="deviceStats" class="device-stats"></div>
+</div>
 
-    <div class="admin-panel">
-        <h3>📱 Device Pengunjung</h3>
-        <div id="deviceStats" class="device-stats"></div>
-    </div>
-
-    <div class="admin-panel">
-        <h3>🔥 Form Terpopuler</h3>
-        <div id="popularForms">Loading...</div>
-    </div>
-
+<div class="admin-panel">
+    <h3>🔥 Form Terpopuler</h3>
+    <div id="popularForms">Loading...</div>
 </div>
 
       </div>
@@ -126,12 +117,14 @@ LOGIN (Admin)
     </p>
 
     <div class="card-buttons umkm-poster-buttons">
-        <button type="button" onclick="openUmkmClosed()">
-    Daftar
-</button>
+        <a href="https://forms.gle/jCPtwgbN8WNx4hy37"
+           target="_blank"
+           onclick="trackFormClick('UMKM')">
+            Daftar UMKM
+        </a>
 
 <button type="button" onclick="openUmkmModal()">
-    Tenant
+    Tennant
 </button>
     </div>
 </article>
@@ -1009,66 +1002,11 @@ Daftar
 
     </div>
 </div>
-<!-- ================= POPUP UMKM CLOSED ================= -->
 
-<div id="umkmClosedModal" class="umkm-closed-modal">
-
-    <div class="umkm-closed-box">
-
-        <button class="umkm-closed-close"
-                onclick="closeUmkmClosed()">×</button>
-
-        <img src="assets/event/closed.png"
-             class="umkm-closed-logo">
-
-        <h2>🎉 Pendaftaran UMKM Telah Ditutup</h2>
-
-        <p>
-            Terima kasih atas antusiasme yang luar biasa dari para pelaku UMKM.
-        </p>
-
-        <p>
-            Seluruh kuota tenant
-            <b>Festival UMKM Tenguyun Fest 2026</b>
-            telah terpenuhi, sehingga pendaftaran resmi kami tutup.
-        </p>
-
-        <p>
-            Kami mengucapkan terima kasih atas partisipasi dan kepercayaan
-            seluruh peserta.
-        </p>
-
-        <p>
-            Nantikan informasi tenant terpilih, denah bazar,
-            serta rangkaian acara lainnya melalui kanal resmi
-            Tenguyun Fest.
-        </p>
-
-        <div class="umkm-closed-footer">
-
-            <a href="https://www.instagram.com/tenguyunfest/"
-               target="_blank">
-
-                📷 @tenguyunfest
-
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-function openUmkmClosed(){
-    document.getElementById("umkmClosedModal").style.display="flex";
-}
-
-function closeUmkmClosed(){
-    document.getElementById("umkmClosedModal").style.display="none";
-}
 function openLogin(){
     document.getElementById("loginModal").style.display = "flex";
 }
@@ -1121,11 +1059,6 @@ window.onclick = function(event){
     const dashboardModal = document.getElementById("adminDashboardModal");
     const umkmModal = document.getElementById("umkmModal");
     const umkmComingSoonModal = document.getElementById("umkmComingSoonModal");
-    const umkmClosed=document.getElementById("umkmClosedModal");
-
-if(event.target===umkmClosed){
-    closeUmkmClosed();
-}
 
     if(event.target === loginModal){
         closeLogin();
@@ -1214,39 +1147,26 @@ async function loadDashboardData(){
     document.getElementById("totalUMKM").innerText = data.totalUMKM;
     document.getElementById("totalEvent").innerText = data.totalEvent;
 
-const chartData = data.visitorChart;
-const maxVisitor = Math.max(...chartData.map(x => x.visitor), 1);
+    let chartHTML = "";
 
-let points = "";
-let dots = "";
-let labels = "";
+const maxVisitor = Math.max(...data.visitorChart.map(v => v.visitor),1);
 
-chartData.forEach((item, index) => {
-    const x = 40 + index * (520 / Math.max(chartData.length - 1, 1));
-const y = 205 - (item.visitor / maxVisitor) * 120;
-    points += `${x},${y} `;
+chartHTML = "";
 
-    dots += `
-        <circle cx="${x}" cy="${y}" r="6" class="xy-dot"></circle>
-        <text x="${x}" y="${y - 18}" class="xy-value">${item.visitor}</text>
-    `;
+    data.visitorChart.forEach(item => {
+        chartHTML += `
+    <div class="chart-item">
+        <div class="chart-bar" style="height:${height}px"></div>
+        <small>${item.date}</small>
+        <b>${item.visitor}</b>
+    </div>
+                <small>${item.date}</small>
+                <b>${item.visitor}</b>
+            </div>
+        `;
+    });
 
-    labels += `
-        <text x="${x}" y="220" class="xy-label">${item.date}</text>
-    `;
-});
-
-document.getElementById("visitorChart").innerHTML = `
-    <svg class="xy-chart" viewBox="0 0 620 240" preserveAspectRatio="none">
-        <line x1="40" y1="200" x2="590" y2="200" class="xy-axis"></line>
-        <line x1="40" y1="50" x2="40" y2="200" class="xy-axis"></line>
-
-        <polyline points="${points}" class="xy-line"></polyline>
-
-        ${dots}
-        ${labels}
-    </svg>
-`;
+    document.getElementById("visitorChart").innerHTML = chartHTML;
 
     document.getElementById("deviceStats").innerHTML = `
         <div>🤖 Android <b>${data.devices.Android}</b></div>
