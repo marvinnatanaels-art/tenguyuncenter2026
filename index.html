@@ -396,30 +396,34 @@ Daftar
 </div>
 
 </article>
-        <!-- 12. Gowes -->
-         <article class="card umkm-poster-card">
-<b>12</b>
+<!-- ================= 12. TOUR DE BULUNGAN ================= -->
+<article class="card umkm-poster-card">
+    <b>12</b>
 
-<div class="event-logo">
-<img src="assets/event/gowes.png">
-</div>
+    <div class="event-logo">
+        <img src="assets/event/gowes.png" alt="Tour de Bulungan">
+    </div>
 
-<div class="event-divider">
-<span></span><i>◇</i><span></span>
-</div>
+    <div class="event-divider">
+        <span></span>
+        <i>◇</i>
+        <span></span>
+    </div>
 
-<h3>Tour de Bulungan</h3>
-<h4>GOWES</h4>
+    <h3>Tour de Bulungan</h3>
+    <h4>GOWES BERSAMA</h4>
 
-<p>
-Klik 👇 untuk detail
-</p>
+    <p>
+        Minggu, 20 September 2026<br>
+        Kumpul 16.30 WITA
+    </p>
 
-<div class="card-buttons umkm-poster-buttons">
-<button type="button" onclick="openGowesModal()">
-    🚴 Coming Soon
-</button>
-</div>
+    <div class="card-buttons umkm-poster-buttons">
+        <button type="button" onclick="openGowesModal()">
+            🚴 Lihat Detail & Daftar
+        </button>
+    </div>
+</article>
 
 </article>
         <!-- 13. Karnaval Kreasi -->
@@ -1324,13 +1328,195 @@ function openComingSoon(){
 function closeComingSoon(){
     document.getElementById("comingSoonModal").style.display = "none";
 }
+/* =========================================================
+   TOUR DE BULUNGAN
+========================================================= */
+
+
 function openGowesModal(){
-    document.getElementById("gowesModal").style.display = "flex";
+
+    const modal =
+        document.getElementById("gowesModal");
+
+    if(!modal) return;
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
 }
 
+
 function closeGowesModal(){
-    document.getElementById("gowesModal").style.display = "none";
-}   
+
+    const modal =
+        document.getElementById("gowesModal");
+
+    if(!modal) return;
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "";
+}
+
+
+/* =========================================================
+   GOOGLE FORM
+========================================================= */
+
+function openTourRegistration(){
+
+    /*
+        GANTI LINK DI BAWAH INI
+        dengan link Google Form Tour de Bulungan
+    */
+
+    const FORM_URL =
+        "https://forms.gle/gTppbmFFDGGY4ynd6";
+
+
+    if(
+        !FORM_URL ||
+        FORM_URL.includes("LINK_GOOGLE_FORM")
+    ){
+
+        alert(
+            "Link pendaftaran Tour de Bulungan belum dipasang."
+        );
+
+        return;
+    }
+
+
+    /*
+        Tracking dashboard kamu
+    */
+
+    if(typeof trackFormClick === "function"){
+
+        trackFormClick(
+            "Tour de Bulungan"
+        );
+
+    }
+
+
+    window.open(
+        FORM_URL,
+        "_blank",
+        "noopener"
+    );
+
+}
+
+
+/* =========================================================
+   MAP LIGHTBOX
+========================================================= */
+
+function openTourMap(){
+
+    const lightbox =
+        document.getElementById(
+            "tourMapLightbox"
+        );
+
+    if(!lightbox) return;
+
+    lightbox.style.display =
+        "flex";
+
+}
+
+
+function closeTourMap(event){
+
+    const lightbox =
+        document.getElementById(
+            "tourMapLightbox"
+        );
+
+    if(!lightbox) return;
+
+
+    /*
+        Jika klik gambar,
+        jangan tutup lightbox
+    */
+
+    if(
+        event &&
+        event.target.tagName === "IMG"
+    ){
+        return;
+    }
+
+
+    lightbox.style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL KETIKA KLIK BACKDROP
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const modal =
+            document.getElementById(
+                "gowesModal"
+            );
+
+        if(
+            modal &&
+            event.target === modal
+        ){
+
+            closeGowesModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            const lightbox =
+                document.getElementById(
+                    "tourMapLightbox"
+                );
+
+
+            if(
+                lightbox &&
+                lightbox.style.display === "flex"
+            ){
+
+                lightbox.style.display =
+                    "none";
+
+                return;
+            }
+
+
+            closeGowesModal();
+
+        }
+
+    }
+); 
 function openUmkmComingSoon(){
     document.getElementById("umkmComingSoonModal").style.display = "flex";
 }
@@ -1378,110 +1564,343 @@ function filterUmkmTenant(){
     emptyText.style.display = visibleCount === 0 ? "block" : "none";
 }
 </script>
-<!-- ================= POPUP GOWES ================= -->
+<!-- =========================================================
+     POPUP TOUR DE BULUNGAN
+========================================================= -->
 
-<div id="gowesModal" class="gowes-modal">
-    <div class="gowes-box">
+<div id="gowesModal" class="tdb-modal">
 
-        <button class="gowes-close" onclick="closeGowesModal()">×</button>
+    <div class="tdb-modal-box">
 
-        <div class="gowes-header">
-            <img src="assets/event/gowes.png" alt="Tour de Bulungan" class="gowes-bike">
+        <!-- CLOSE -->
+        <button
+            type="button"
+            class="tdb-close"
+            onclick="closeGowesModal()"
+            aria-label="Tutup">
+            ×
+        </button>
 
-            <div>
-                <h2>TOUR DE BULUNGAN</h2>
-                <h4>Gowes Event</h4>
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+        <section class="tdb-header">
+
+            <div class="tdb-brand-logo">
+                <img
+                    src="assets/event/gowes.png"
+                    alt="Logo Tour de Bulungan">
+            </div>
+
+            <div class="tdb-title">
+
+                <span class="tdb-kicker">
+                    TENGUYUN FEST 2026
+                </span>
+
+                <h2>
+                    TOUR DE BULUNGAN
+                </h2>
+
                 <p>
-                    Tour de Bulungan adalah event bersepeda yang menghadirkan
-                    pengalaman menjelajahi keindahan alam, budaya, dan destinasi
-                    terbaik di Kabupaten Bulungan.
+                    Gowes bersama menikmati suasana Bulungan
+                    dalam semangat olahraga, kebersamaan,
+                    dan Tenguyun.
                 </p>
-            </div>
-        </div>
-
-        <div class="gowes-divider">
-            <span></span>
-            <i>🚴</i>
-            <span></span>
-        </div>
-
-        <div class="gowes-content">
-
-            <div class="gowes-left">
-
-                <div class="gowes-card">
-                    <h3>🚴 Tentang Gowes</h3>
-                    <p>
-                        Event gowes ini terbuka untuk masyarakat umum, komunitas
-                        sepeda, hingga pesepeda hobi. Nikmati rute yang seru,
-                        suasana kebersamaan, dan semangat hidup sehat bersama
-                        Tenguyun Fest.
-                    </p>
-                </div>
-
-                <div class="gowes-info">
-                    <div>
-                        <b>📅 Waktu Pelaksanaan</b>
-                        <p>Akan diumumkan segera</p>
-                    </div>
-
-                    <div>
-                        <b>📍 Lokasi Start / Finish</b>
-                        <p>Akan diumumkan segera</p>
-                    </div>
-
-                    <div>
-                        <b>👥 Peserta</b>
-                        <p>Terbuka untuk umum</p>
-                    </div>
-                </div>
-
-                <div class="gowes-card">
-                    <h3>🏆 Kategori</h3>
-
-                    <div class="gowes-tags">
-                        <span>Ditunggu Updatenyaa!!!</span>
-                    </div>
-                </div>
 
             </div>
 
-            <div class="gowes-right">
+        </section>
 
-                <h3>📍 Rute Gowes</h3>
 
-                <div class="gowes-map">
-                    <img src="assets/event/map.png" alt="Rute Gowes">
+        <!-- =================================================
+             QUICK INFO
+        ================================================== -->
+        <section class="tdb-quick-info">
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">📅</div>
+
+                <div>
+                    <span>Tanggal</span>
+                    <strong>20 September 2026</strong>
+                </div>
+            </div>
+
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">🕟</div>
+
+                <div>
+                    <span>Waktu Kumpul</span>
+                    <strong>16.30 WITA</strong>
+                </div>
+            </div>
+
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">📍</div>
+
+                <div>
+                    <span>Start & Finish</span>
+                    <strong>Universitas Kaltara</strong>
+                </div>
+            </div>
+
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">🚴</div>
+
+                <div>
+                    <span>Kategori</span>
+                    <strong>Umum</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+        <section class="tdb-main">
+
+
+            <!-- ================= ROUTE ================= -->
+            <div class="tdb-route">
+
+                <div class="tdb-section-title">
+
+                    <div>
+                        <span class="tdb-small-title">
+                            RUTE KEGIATAN
+                        </span>
+
+                        <h3>
+                            📍 Rute Tour de Bulungan
+                        </h3>
+                    </div>
+
+                    <span class="tdb-route-badge">
+                        Start = Finish
+                    </span>
 
                 </div>
 
-                <div class="route-note">
-                    🔒 Rute masih dalam tahap finalisasi. Nantikan update rute
-                    lengkap dan titik-titik menarik yang akan dilalui.
-                    <div class="gowes-footer">
-            <p>
-                📢 Ikuti Instagram resmi kami untuk mendapatkan informasi
-                pembukaan pendaftaran Tour de Bulungan.
-            </p>
 
-            <a href="https://www.instagram.com/tenguyunfest/" target="_blank">
+                <div
+                    class="tdb-map"
+                    onclick="openTourMap()"
+                    title="Klik untuk memperbesar rute">
+
+                    <img
+                        src="assets/event/map.png"
+                        alt="Rute Tour de Bulungan">
+
+                    <div class="tdb-map-overlay">
+                        <span>🔍</span>
+                        Klik untuk melihat rute
+                    </div>
+
+                </div>
+
+
+                <div class="tdb-route-info">
+
+                    <div>
+                        <span class="tdb-dot tdb-dot-start"></span>
+
+                        <p>
+                            <small>START</small>
+                            <strong>Universitas Kaltara</strong>
+                        </p>
+                    </div>
+
+                    <div class="tdb-route-line"></div>
+
+                    <div>
+                        <span class="tdb-dot tdb-dot-finish"></span>
+
+                        <p>
+                            <small>FINISH</small>
+                            <strong>Universitas Kaltara</strong>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SIDE INFORMATION ================= -->
+            <aside class="tdb-side">
+
+
+                <!-- DOORPRIZE -->
+                <div class="tdb-side-card tdb-doorprize">
+
+                    <div class="tdb-side-icon">
+                        🎁
+                    </div>
+
+                    <div>
+                        <span>HADIAH</span>
+
+                        <h3>
+                            Doorprize Menarik
+                        </h3>
+
+                        <p>
+                            Ikuti Tour de Bulungan dan dapatkan
+                            kesempatan membawa pulang berbagai
+                            doorprize menarik dari panitia.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PESERTA -->
+                <div class="tdb-side-card">
+
+                    <div class="tdb-side-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>PESERTA</span>
+
+                        <h3>
+                            Terbuka Untuk Umum
+                        </h3>
+
+                        <p>
+                            Masyarakat umum, komunitas sepeda,
+                            maupun pesepeda hobi dapat mengikuti
+                            kegiatan ini.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- REMINDER -->
+                <div class="tdb-reminder">
+
+                    <div class="tdb-reminder-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+                        <strong>
+                            Sebelum Mendaftar
+                        </strong>
+
+                        <p>
+                            Pastikan melihat rute kegiatan
+                            dan mengisi data pendaftaran
+                            dengan benar.
+                        </p>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+        <section class="tdb-register">
+
+            <div class="tdb-register-text">
+
+                <span>
+                    PENDAFTARAN TOUR DE BULUNGAN
+                </span>
+
+                <h3>
+                    Siap Gowes Bareng?
+                </h3>
+
+                <p>
+                    Daftarkan dirimu dan ramaikan
+                    Tour de Bulungan 2026.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="tdb-register-btn"
+                onclick="openTourRegistration()">
+
+                <span>🚴</span>
+
+                <div>
+                    <small>KLIK UNTUK</small>
+                    <strong>DAFTAR SEKARANG</strong>
+                </div>
+
+                <span class="tdb-arrow">
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+        <div class="tdb-footer">
+
+            <span>
+                Informasi terbaru:
+            </span>
+
+            <a
+                href="https://www.instagram.com/tenguyunfest/"
+                target="_blank"
+                rel="noopener">
+
                 📷 @tenguyunfest
-            </a>
-        </div>
-                </div>
-                
 
-            </div>
+            </a>
 
         </div>
 
     </div>
+
 </div>
-<a
-    href="https://www.instagram.com/tenguyunfest/"
-    target="_blank"
-    class="site-credit">
-    Designed with 🩵
-</a>
+
+
+<!-- =========================================================
+     LIGHTBOX RUTE
+========================================================= -->
+
+<div
+    id="tourMapLightbox"
+    class="tdb-lightbox"
+    onclick="closeTourMap(event)">
+
+    <button
+        type="button"
+        class="tdb-lightbox-close"
+        onclick="closeTourMap()">
+
+        ×
+
+    </button>
+
+    <img
+        src="assets/event/map.png"
+        alt="Rute Tour de Bulungan">
+
+</div>
 </body>
-</html>
