@@ -9,7 +9,6 @@
 </head>
 
 <body>
-<!-- Popup Dashboard -->
 <div id="adminDashboardModal" class="admin-dashboard-modal">
   <div class="admin-dashboard-box">
     <button class="admin-close" onclick="closeAdminDashboard()">×</button>
@@ -64,7 +63,6 @@
 </div> 
   <header class="navbar">
     <div class="brand">
-      <!-- Ganti file logo di assets/logo-tfc.png kalau mau pakai logo lain -->
       <img class="brand-logo" src="assets/logo-tfc.png" alt="Logo Tenguyun" />
       <div>
         <h1>TENGUYUN FEST</h1>
@@ -79,13 +77,11 @@
       <a href="#kontak">Kontak Admin</a>
     </nav>
 
-    <!-- Ganti nomor WhatsApp admin di bawah ini -->
 <a class="chat-btn" href="#" onclick="openLogin();return false;">
 LOGIN (Admin)
 </a>  </header>
 
   <main id="home">
-    <!-- Ganti file cover di assets/header-cover.png kalau mau pakai cover lain -->
     <section class="hero-image">
       <img src="assets/header-cover.webp" alt="Tenguyun Form Center" />
     </section>
@@ -523,8 +519,6 @@ Daftar
       </div>
     </footer>
   </main>
-  <!-- ================= LOGIN ADMIN ================= -->
-<!-- ================= LOGIN ADMIN ================= -->
 
 <div id="loginModal" class="login-modal">
     <div class="login-box">
@@ -762,7 +756,6 @@ Daftar
                 <span class="umkm-status">Terverifikasi</span>
             </div>
 
-
             <!-- ================= MINUMAN LAIN ================= -->
             <!-- 11 -->
              <div class="umkm-card">
@@ -984,6 +977,23 @@ Daftar
 
                 <span class="umkm-status">Terverifikasi</span>
             </div>
+        <!-- Tambahan -->
+           
+            <div class="umkm-card">
+                <img src="assets/umkm/dlucious.jpeg" alt="D Lucious">
+
+                <div class="umkm-detail">
+                    <h3>D'Lucious</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/lusi_newanna/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
 
 
             <!-- ================= FASHION, ACC, DLL ================= -->
@@ -1107,7 +1117,6 @@ Daftar
     </div>
 
 </div>
-<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
@@ -1564,15 +1573,12 @@ function filterUmkmTenant(){
     emptyText.style.display = visibleCount === 0 ? "block" : "none";
 }
 </script>
-<!-- =========================================================
-     POPUP TOUR DE BULUNGAN
-========================================================= -->
+<!--POPUP TOUR DE BULUNGAN-->
 
 <div id="gowesModal" class="tdb-modal">
 
     <div class="tdb-modal-box">
 
-        <!-- CLOSE -->
         <button
             type="button"
             class="tdb-close"
@@ -1581,10 +1587,6 @@ function filterUmkmTenant(){
             ×
         </button>
 
-
-        <!-- =================================================
-             HEADER
-        ================================================== -->
         <section class="tdb-header">
 
             <div class="tdb-brand-logo">
@@ -1613,10 +1615,6 @@ function filterUmkmTenant(){
 
         </section>
 
-
-        <!-- =================================================
-             QUICK INFO
-        ================================================== -->
         <section class="tdb-quick-info">
 
             <div class="tdb-info-item">
@@ -1660,14 +1658,8 @@ function filterUmkmTenant(){
 
         </section>
 
-
-        <!-- =================================================
-             MAIN CONTENT
-        ================================================== -->
         <section class="tdb-main">
 
-
-            <!-- ================= ROUTE ================= -->
             <div class="tdb-route">
 
                 <div class="tdb-section-title">
@@ -1732,12 +1724,8 @@ function filterUmkmTenant(){
 
             </div>
 
-
-            <!-- ================= SIDE INFORMATION ================= -->
             <aside class="tdb-side">
 
-
-                <!-- DOORPRIZE -->
                 <div class="tdb-side-card tdb-doorprize">
 
                     <div class="tdb-side-icon">
@@ -1760,8 +1748,6 @@ function filterUmkmTenant(){
 
                 </div>
 
-
-                <!-- PESERTA -->
                 <div class="tdb-side-card">
 
                     <div class="tdb-side-icon">
@@ -1784,8 +1770,6 @@ function filterUmkmTenant(){
 
                 </div>
 
-
-                <!-- REMINDER -->
                 <div class="tdb-reminder">
 
                     <div class="tdb-reminder-icon">
@@ -1810,10 +1794,6 @@ function filterUmkmTenant(){
 
         </section>
 
-
-        <!-- =================================================
-             CTA
-        ================================================== -->
         <section class="tdb-register">
 
             <div class="tdb-register-text">
@@ -1854,10 +1834,6 @@ function filterUmkmTenant(){
 
         </section>
 
-
-        <!-- =================================================
-             FOOTER
-        ================================================== -->
         <div class="tdb-footer">
 
             <span>
@@ -1879,11 +1855,6 @@ function filterUmkmTenant(){
 
 </div>
 
-
-<!-- =========================================================
-     LIGHTBOX RUTE
-========================================================= -->
-
 <div
     id="tourMapLightbox"
     class="tdb-lightbox"
@@ -1903,4 +1874,61 @@ function filterUmkmTenant(){
         alt="Rute Tour de Bulungan">
 
 </div>
+<script>
+// Blok klik kanan
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+});
+
+// Blok shortcut DevTools umum
+document.addEventListener("keydown", function (event) {
+
+    // F12
+    if (event.key === "F12") {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + I
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "i"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + J
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "j"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + C
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "c"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + U = View Source
+    if (
+        event.ctrlKey &&
+        event.key.toLowerCase() === "u"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+});
+</script>
 </body>
+</html>
