@@ -1,0 +1,5 @@
+FAVICON TENGUYUN FEST
+
+Salin index.html dan folder assets ke folder website yang sudah ada.
+Ikon berada di assets/site/favicon.ico serta PNG 16, 32, dan 48 piksel.
+Tetap gunakan app.js, dummy.css, assets-data.js, dan foto yang sudah ada.

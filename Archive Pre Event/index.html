@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFO CENTER</title>
+  <link rel="stylesheet" href="dummy.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+<div id="adminDashboardModal" class="admin-dashboard-modal">
+  <div class="admin-dashboard-box">
+    <button class="admin-close" onclick="closeAdminDashboard()">×</button>
+
+    <aside class="admin-sidebar">
+      <h2>TFO Admin</h2>
+      <p>Dashboard</p>
+      <ul>
+        <li class="active">🏠 Dashboard</li>
+        <li onclick="logoutAdmin()">🚪 Logout</li>
+      </ul>
+    </aside>
+
+    <section class="admin-content">
+      <h1>Dashboard Administrator</h1>
+      <p>Statistik mockup Tenguyun Form Center.</p>
+
+      <div class="admin-stats">
+        <div><span>Total Visitor</span><b id="totalVisitor">0</b></div>
+        <div><span>Total Klik Form</span><b id="totalClick">0</b></div>
+        <div><span>UMKM Terdaftar</span><b id="totalUMKM">25</b></div>
+        <div><span>Event Aktif</span><b id="totalEvent">13</b></div>
+      </div>
+
+      <div class="admin-panel chart-panel">
+
+    <div class="chart-header">
+        <h3>📈 Grafik Pengunjung 7 Hari</h3>
+    </div>
+
+    <div id="visitorChart" class="mini-chart"></div>
+
+</div>
+
+<div class="admin-bottom">
+
+    <div class="admin-panel">
+        <h3>📱 Device Pengunjung</h3>
+        <div id="deviceStats" class="device-stats"></div>
+    </div>
+
+    <div class="admin-panel">
+        <h3>🔥 Form Terpopuler</h3>
+        <div id="popularForms">Loading...</div>
+    </div>
+
+</div>
+
+      </div>
+    </section>
+  </div>
+</div> 
+  <header class="navbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/logo-tfc.png" alt="Logo Tenguyun" />
+      <div>
+        <h1>TENGUYUN FEST</h1>
+        <p>ORGANIZER</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#pendaftaran">Pendaftaran</a>
+      <a href="#informasi">Informasi</a>
+      <a href="#kontak">Kontak Admin</a>
+    </nav>
+
+<a class="chat-btn" href="#" onclick="openLogin();return false;">
+LOGIN (Admin)
+</a>  </header>
+
+  <main id="home">
+    <section class="hero-image">
+      <img src="assets/header-cover.webp" alt="Tenguyun Form Center" />
+    </section>
+
+    <section class="announcement">
+      <strong>📣 PENDAFTARAN DIBUKA!</strong>
+      <span>Pendaftaran dibuka sampai 16 Agustus 2026 atau sampai kuota terpenuhi.</span>
+      <a href="#informasi">Lihat Info Lengkap</a>
+    </section>
+
+    <section id="pendaftaran" class="forms-section">
+      <h2>PILIH FORM PENDAFTARAN</h2>
+      <div class="underline"></div>
+
+      <div class="form-grid">
+
+        <!-- 1. UMKM -->
+<article class="card umkm-poster-card">
+    <b>01</b>
+
+    <div class="event-logo">
+        <img src="assets/event/umkm.png" alt="Festival UMKM">
+    </div>
+
+    <div class="event-divider">
+        <span></span>
+        <i>◇</i>
+        <span></span>
+    </div>
+
+    <h3>Festival UMKM</h3>
+
+    <h4>Pameran & Produk Lokal</h4>
+
+    <p>
+        Pendaftaran tenant UMKM untuk berpartisipasi
+        dalam Tenguyun Fest.
+    </p>
+
+    <div class="card-buttons umkm-poster-buttons">
+        <button type="button" onclick="openUmkmClosed()">
+    Daftar
+</button>
+
+<button type="button" onclick="openUmkmModal()">
+    Tenant
+</button>
+    </div>
+</article>
+        <!-- 2. Panahan -->
+    <article class="card umkm-poster-card">
+<b>02</b>
+
+<div class="event-logo">
+<img src="assets/event/panahan.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Panahan</h3>
+<h4>Traditional Games</h4>
+
+<p>
+Pendaftaran peserta lomba Panahan Tenguyun Fest.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/wsksazCMTnJhtf649" target="_blank" onclick="trackFormClick('Panahan')">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 3. Airsoft -->
+         <article class="card umkm-poster-card">
+<b>03</b>
+
+<div class="event-logo">
+<img src="assets/event/airsoft.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Airsoft</h3>
+<h4>Competition</h4>
+
+<p>
+Pendaftaran peserta Airsoft Competition.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/iHHgFbMwSSVgrR7h7" target="_blank" onclick="trackFormClick('Airsoft')">
+Daftar
+</a>
+</div>
+
+</article>
+
+        <!-- 4. Mobile Legends -->
+         <article class="card umkm-poster-card">
+<b>04</b>
+
+<div class="event-logo">
+<img src="assets/event/mole.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Esport ML</h3>
+<h4>Tournament</h4>
+
+<p>
+Pendaftaran peserta Esport Mobile Legends.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/merCUwVcruh9TRkm8" target="_blank" onclick="trackFormClick('Esport ML')">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 5. Drum Battle -->
+         <article class="card umkm-poster-card">
+<b>05</b>
+
+<div class="event-logo">
+<img src="assets/event/drum.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Drum Battle</h3>
+<h4>Competition</h4>
+
+<p>
+Pendaftaran peserta Drum Battle Competition.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/KXaU59TAHLBmzVCr6" target="_blank" onclick="trackFormClick('Drum Battle')">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 6. Sumpit -->
+         <article class="card umkm-poster-card">
+<b>06</b>
+
+<div class="event-logo">
+<img src="assets/event/sumpit.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Sumpitan</h3>
+<h4>Traditional Games</h4>
+
+<p>
+Pendaftaran peserta lomba Sumpit Traditional.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/6bLUhzw59QtVLAhEA" target="_blank" onclick="trackFormClick('Sumpit')">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 7. Gasing -->
+         <article class="card umkm-poster-card">
+<b>07</b>
+
+<div class="event-logo">
+<img src="assets/event/gasing.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Gasing</h3>
+<h4>Traditional Games</h4>
+
+<p>
+Pendaftaran peserta lomba Gasing Traditional.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/UJzsMRDteaLFTUKL6" target="_blank" onclick="trackFormClick('Gasing')">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 8. Egrang -->
+         <article class="card umkm-poster-card">
+<b>08</b>
+
+<div class="event-logo">
+<img src="assets/event/egrang.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Egrang</h3>
+<h4>Traditional Games</h4>
+
+<p>
+Pendaftaran peserta lomba Egrang Traditional.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/2ovCyKWNYfzUfJo56" target="_blank">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 9. Melukis -->
+         <article class="card umkm-poster-card">
+<b>09</b>
+
+<div class="event-logo">
+<img src="assets/event/melukis.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Festival Melukis</h3>
+<h4>Art Competition</h4>
+
+<p>
+Pendaftaran peserta Festival Melukis.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/LHqy9YPwgEsttmXJ9" target="_blank">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 10. Mewarnai -->
+         <article class="card umkm-poster-card">
+<b>10</b>
+
+<div class="event-logo">
+<img src="assets/event/mewarnai.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Festival Mewarnai</h3>
+<h4>Art Competition</h4>
+
+<p>
+Pendaftaran peserta Festival Mewarnai.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/7Eo6vb8qTqU1e4aX6" target="_blank">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- 11. Senam -->
+         <article class="card umkm-poster-card">
+<b>11</b>
+
+<div class="event-logo">
+<img src="assets/event/senam.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Festival Senam</h3>
+<h4>Dance Competition</h4>
+
+<p>
+Pendaftaran peserta Festival Senam.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/6czhPERNUgDieDrq5" target="_blank">
+Daftar
+</a>
+</div>
+
+</article>
+<!-- ================= 12. TOUR DE BULUNGAN ================= -->
+<article class="card umkm-poster-card">
+    <b>12</b>
+
+    <div class="event-logo">
+        <img src="assets/event/gowes.png" alt="Tour de Bulungan">
+    </div>
+
+    <div class="event-divider">
+        <span></span>
+        <i>◇</i>
+        <span></span>
+    </div>
+
+    <h3>Tour de Bulungan</h3>
+    <h4>GOWES BERSAMA</h4>
+
+    <p>
+        Minggu, 20 September 2026<br>
+        Kumpul 16.30 WITA
+    </p>
+
+    <div class="card-buttons umkm-poster-buttons">
+        <button type="button" onclick="openGowesModal()">
+            🚴 Lihat Detail & Daftar
+        </button>
+    </div>
+</article>
+
+</article>
+        <!-- 13. Karnaval Kreasi -->
+         <article class="card umkm-poster-card">
+<b>13</b>
+
+<div class="event-logo">
+<img src="assets/event/karnaval.png">
+</div>
+
+<div class="event-divider">
+<span></span><i>◇</i><span></span>
+</div>
+
+<h3>Karnaval Kreasi</h3>
+<h4>Budaya Tenguyun</h4>
+
+<p>
+Pendaftaran peserta Karnaval Kreasi.
+</p>
+
+<div class="card-buttons umkm-poster-buttons">
+<a href="https://forms.gle/p2DBhVW2XyvJ1HCQA" target="_blank">
+Daftar
+</a>
+</div>
+
+</article>
+        <!-- Kartu Coming Soon -->
+
+<article class="card wide-coming-card">
+    <img src="assets/event/comingsoon.webp" alt="Coming Soon" class="wide-coming-bg">
+
+    <div class="wide-coming-overlay">
+        <h3>COMING SOON</h3>
+        <h2>Tenguyun Fest 2026</h2>
+        <h4>Road To Birau</h4>
+        <p>Festival Budaya Bulungan</p>
+        <span>Save The Date</span>
+    </div>
+</article>
+
+      </div>
+    </section>
+
+    <section id="informasi" class="features">
+      <div><h3>📅 Mudah & Cepat</h3><p>Isi form secara online kapan saja dan di mana saja.</p></div>
+      <div><h3>🔒 Data Aman</h3><p>Data digunakan sesuai kebutuhan kegiatan.</p></div>
+      <div><h3>🔔 Informasi Terbaru</h3><p>Dapatkan update terbaru seputar kegiatan melalui portal ini.</p></div>
+      <div><h3>🎧 Bantuan Admin</h3><p>Jika ada kendala, silakan hubungi admin melalui kontak tersedia.</p></div>
+    </section>
+
+    <footer id="kontak">
+     
+      <div class="footer-brand">
+<a href="https://www.instagram.com/univ.kaltara/" target="_blank">
+    <img src="assets/logo-unikaltar.webp" alt="Logo Universitas Kaltara" class="footer-logo">
+</a>
+
+    <div class="footer-location">
+        <h2>LOKASI ACARA</h2>
+
+        <h3>Universitas Kaltara</h3>
+
+        <p>
+            Jl. Sengkawit, Tanjung Selor Hilir<br>
+            Kecamatan Tanjung Selor<br>
+            Kabupaten Bulungan<br>
+            Kalimantan Utara
+        </p>
+
+        <a href="https://maps.google.com/?q=Universitas+Kaltara+Tanjung+Selor"
+           target="_blank"
+           class="maps-link">
+            📍 Lihat Lokasi di Google Maps
+        </a>
+    </div>
+</div>
+
+      <div>
+        <h3>HUBUNGI ADMIN</h3>
+        <p>WhatsApp: 0813-2924-6252</p>
+        <p>Email: tenguyunfestorganizer@gmail.com</p>
+        <p>
+    Instagram:
+    <a href="https://www.instagram.com/tenguyunfest/" target="_blank">
+        @tenguyunfest
+    </a>
+</p>
+      </div>
+
+      <div>
+        <h3>SCAN UNTUK AKSES PORTAL</h3>
+<div class="qr">
+    <img src="assets/qr-tfo.png" alt="QR Tenguyun Form Center">
+</div>
+      </div>
+    </footer>
+  </main>
+
+<div id="loginModal" class="login-modal">
+    <div class="login-box">
+
+        <button class="close-btn" onclick="closeLogin()">×</button>
+
+        <div class="login-logo">
+            🔒
+        </div>
+
+        <h2>Dashboard Admin</h2>
+
+        <p>
+            Silakan login untuk mengakses Dashboard Administrator.
+        </p>
+
+        <input
+            id="adminUser"
+            type="text"
+            placeholder="Username">
+
+        <input
+            id="adminPass"
+            type="password"
+            placeholder="Password">
+
+        <button class="login-button" onclick="loginAdmin()">
+            Masuk Dashboard
+        </button>
+
+    </div>
+</div>
+
+
+<!-- ================= POPUP LIST UMKM ================= -->
+
+<div id="umkmModal" class="umkm-modal-overlay">
+    <div class="umkm-modal-box">
+
+        <button class="umkm-close" onclick="closeUmkmModal()">×</button>
+
+        <div class="umkm-modal-header">
+            <div class="umkm-modal-icon">🏪</div>
+
+            <div>
+                <h2>UMKM Terdaftar</h2>
+                <p>Daftar tenant yang telah terdaftar pada Tenguyun Fest.</p>
+            </div>
+        </div>
+<div class="umkm-tools">
+    <div class="umkm-search-box">
+        <span>🔍</span>
+        <input
+            type="text"
+            id="umkmSearch"
+            placeholder="Cari nama UMKM atau kategori..."
+            oninput="filterUmkmTenant()">
+    </div>
+
+    <div class="umkm-filter">
+        <button class="active" onclick="setUmkmCategory('Semua', this)">Semua</button>
+        <button onclick="setUmkmCategory('Minuman Kopi', this)">Kopi</button>
+        <button onclick="setUmkmCategory('Makanan Berat', this)">Makanan Berat</button>
+        <button onclick="setUmkmCategory('Minuman Lain', this)">Minuman Lain</button>
+        <button onclick="setUmkmCategory('Makanan Ringan', this)">Snack</button>
+        <button onclick="setUmkmCategory('Fashion', this)">Fashion, Acc, dll</button>
+    </div>
+</div>
+
+<div id="umkmEmpty" class="umkm-empty">
+    UMKM tidak ditemukan.
+</div>
+        <div class="umkm-list">
+
+            <!-- ================= MINUMAN KOPI ================= -->
+            <!-- 1 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/naoka.webp" alt="Naoka Space">
+
+                <div class="umkm-detail">
+                    <h3>Naoka Space</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+                    <a href="https://www.instagram.com/naoka.space/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 2 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/zhiyu.webp" alt="Zhiyu Space">
+
+                <div class="umkm-detail">
+                    <h3>Zhiyu Space</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+                    <a href="https://www.instagram.com/zhiyu.space/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 3 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/oula.webp" alt="Oula Coffee">
+
+                <div class="umkm-detail">
+                    <h3>Oula Coffee</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+                    <a href="https://www.instagram.com/oula.coffee/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 4 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/takura.webp" alt="Street Kopi Takura">
+
+                <div class="umkm-detail">
+                    <h3>Street Kopi Takura</h3>
+                    <p><strong>Kategori:</strong> Minuman Kopi</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+
+            <!-- ================= MAKANAN BERAT ================= -->
+            <!-- 6 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/cihonje.webp" alt="Cihonje Chrunchiest Chicken">
+
+                <div class="umkm-detail">
+                    <h3>Cihonje Chrunchiest Chicken</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
+
+                    <a href="https://www.instagram.com/cihonje_crunchiest_chicken/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 6 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/babaica.webp" alt="Baba Ica">
+
+                <div class="umkm-detail">
+                    <h3>Baba Ica</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
+
+                    <a href="https://www.instagram.com/alftastyfood.kaltara/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 7 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/nyemek.webp" alt="Mie Nyemek Andini">
+
+                <div class="umkm-detail">
+                    <h3>Mie Nyemek Andini</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 8 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/mila.webp" alt="Dapur Mila">
+
+                <div class="umkm-detail">
+                    <h3>Dapur Mila</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
+
+                    <a href="https://www.instagram.com/dapur_mila_tanjungselor/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 9 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/doyan.png" alt="Doyan Ngemil">
+
+                <div class="umkm-detail">
+                    <h3>Doyan Ngemil</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 10 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pokpok.webp" alt="Chicken Pokpok">
+
+                <div class="umkm-detail">
+                    <h3>Chicken Pokpok</h3>
+                    <p><strong>Kategori:</strong> Makanan Berat</p>
+
+                    <a href="https://www.instagram.com/chicken_pokpoktjs/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- ================= MINUMAN LAIN ================= -->
+            <!-- 11 -->
+             <div class="umkm-card">
+                <img src="assets/umkm/kayanku.webp" alt="KAYANKU">
+
+                <div class="umkm-detail">
+                    <h3>KAYANKU</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
+
+                    <a href="https://www.instagram.com/amdkkayanku/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+            <div class="umkm-card">
+                <img src="assets/umkm/teakopling.webp" alt="TEAKOPLING">
+
+                <div class="umkm-detail">
+                    <h3>TEAKOPLING</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
+
+                    <a href="https://www.instagram.com/teakopling/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 12 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/alen.webp" alt="Sumber Rezeki Aien">
+
+                <div class="umkm-detail">
+                    <h3>Sumber Rezeki Aien</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 13 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/fauget.png" alt="Fauget Juice">
+
+                <div class="umkm-detail">
+                    <h3>Fauget Juice</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
+
+                    <a href="https://www.instagram.com/fauget.juice/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+
+            <div class="umkm-card">
+                <img src="assets/umkm/freemilt.webp" alt="Freemilt">
+
+                <div class="umkm-detail">
+                    <h3>Freemilt</h3>
+                    <p><strong>Kategori:</strong> Minuman Lain</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+
+            <!-- ================= MAKANAN RINGAN ================= -->
+            <!-- 14 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/salad.webp" alt="Salad Buah Sista">
+
+                <div class="umkm-detail">
+                    <h3>Salad Buah Sista</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/saladbuah_sista/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+                        <!-- 15 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/duwi.webp" alt="Duwi Roti Bakar">
+
+                <div class="umkm-detail">
+                    <h3>Duwi Roti Bakar</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/duwi.rotibakar/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+                        <!-- 16 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pempek.webp" alt="Pempek Ciknia">
+
+                <div class="umkm-detail">
+                    <h3>Pempek Ciknia</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/pempek_ciknia/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>            
+            <!-- 17 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pukis.webp" alt="Sweetpukis">
+
+                <div class="umkm-detail">
+                    <h3>Sweetpukis</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 18 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/littlewhisk.png" alt="Little Whisk">
+
+                <div class="umkm-detail">
+                    <h3>Little Whisk</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/little_whiskkkk/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 19 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/pentol.webp" alt="PENTOL PRASMANAN PARAHYANGAN">
+
+                <div class="umkm-detail">
+                    <h3>PENTOL PRASMANAN PARAHYANGAN</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 20 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/sfit.webp" alt="Syafitri">
+
+                <div class="umkm-detail">
+                    <h3>Syafitri</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 21 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/imbut.webp" alt="Imbut Imbut Angkringan">
+
+                <div class="umkm-detail">
+                    <h3>Imbut Imbut Angkringan</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 22 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/uty.webp" alt="Uty Kitchen">
+
+                <div class="umkm-detail">
+                    <h3>Uty Kitchen</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+        <!-- Tambahan -->
+           
+            <div class="umkm-card">
+                <img src="assets/umkm/dlucious.jpeg" alt="D Lucious">
+
+                <div class="umkm-detail">
+                    <h3>D'Lucious</h3>
+                    <p><strong>Kategori:</strong> Makanan Ringan</p>
+
+                    <a href="https://www.instagram.com/lusi_newanna/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+
+
+            <!-- ================= FASHION, ACC, DLL ================= -->
+            <!-- 23 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/larehome.webp" alt="Larehomewear.id">
+
+                <div class="umkm-detail">
+                    <h3>Larehomewear.id</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <a href="https://www.instagram.com/larehomewear.id/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 24 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/robbot.webp" alt="Robbot Accessories Gadget">
+
+                <div class="umkm-detail">
+                    <h3>Robbot Accessories Gadget</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 25 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/ayanika.webp" alt="Anyanika Tas Anyaman">
+
+                <div class="umkm-detail">
+                    <h3>Anyanika (Tas Anyaman)</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+            <!-- 26 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/dekranasda.webp" alt="Dekranasda">
+
+                <div class="umkm-detail">
+                    <h3>Dekranasda Bulungan</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <a href="https://www.instagram.com/dekranasda_bulungan/" target="_blank">
+                        Instagram
+                    </a>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+        </div>
+                <!-- 25 -->
+            <div class="umkm-card">
+                <img src="assets/umkm/butey.jpg" alt="Butey Boutique">
+
+                <div class="umkm-detail">
+                    <h3>Butey Boutique</h3>
+                    <p><strong>Kategori:</strong> Fashion, Acc, dll</p>
+
+                    <span class="no-instagram">
+                        Instagram tidak tersedia
+                    </span>
+                </div>
+
+                <span class="umkm-status">Terverifikasi</span>
+            </div>
+
+        <div class="umkm-note">
+            Informasi UMKM diperbarui secara manual oleh panitia.
+        </div>
+
+    </div>
+</div>
+<!-- ================= POPUP UMKM CLOSED ================= -->
+
+<div id="umkmClosedModal" class="umkm-closed-modal">
+
+    <div class="umkm-closed-box">
+
+        <button class="umkm-closed-close"
+                onclick="closeUmkmClosed()">×</button>
+
+        <img src="assets/event/closed.webp"
+             class="umkm-closed-logo">
+
+        <h2>🎉 Pendaftaran UMKM Telah Ditutup</h2>
+
+        <p>
+            Terima kasih atas antusiasme yang luar biasa dari para pelaku UMKM.
+        </p>
+
+        <p>
+            Seluruh kuota tenant
+            <b>Festival UMKM Tenguyun Fest 2026</b>
+            telah terpenuhi, sehingga pendaftaran resmi kami tutup.
+        </p>
+
+        <p>
+            Kami mengucapkan terima kasih atas partisipasi dan kepercayaan
+            seluruh peserta.
+        </p>
+
+        <p>
+            Nantikan informasi tenant terpilih, denah bazar,
+            serta rangkaian acara lainnya melalui kanal resmi
+            Tenguyun Fest.
+        </p>
+
+        <div class="umkm-closed-footer">
+
+            <a href="https://www.instagram.com/tenguyunfest/"
+               target="_blank">
+
+                📷 @tenguyunfest
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function openUmkmClosed(){
+    document.getElementById("umkmClosedModal").style.display="flex";
+}
+
+function closeUmkmClosed(){
+    document.getElementById("umkmClosedModal").style.display="none";
+}
+function openLogin(){
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin(){
+    document.getElementById("loginModal").style.display = "none";
+}
+
+function loginAdmin(){
+
+    let username = document.getElementById("adminUser").value;
+    let password = document.getElementById("adminPass").value;
+
+    if(username === "admin" && password === "aciscantik"){
+
+        document.getElementById("loginModal").style.display = "none";
+        document.getElementById("adminDashboardModal").style.display = "flex";
+
+        loadDashboardData();
+    } else {
+        alert("Username atau Password salah.");
+    }
+
+}
+
+function closeAdminDashboard(){
+    document.getElementById("adminDashboardModal").style.display = "none";
+}
+
+function logoutAdmin(){
+
+    document.getElementById("adminDashboardModal").style.display = "none";
+
+    document.getElementById("adminUser").value = "";
+    document.getElementById("adminPass").value = "";
+
+}
+
+function openUmkmModal(){
+    document.getElementById("umkmModal").style.display = "flex";
+}
+
+function closeUmkmModal(){
+    document.getElementById("umkmModal").style.display = "none";
+}
+
+window.onclick = function(event){
+
+    const loginModal = document.getElementById("loginModal");
+    const dashboardModal = document.getElementById("adminDashboardModal");
+    const umkmModal = document.getElementById("umkmModal");
+    const umkmComingSoonModal = document.getElementById("umkmComingSoonModal");
+    const umkmClosed=document.getElementById("umkmClosedModal");
+
+if(event.target===umkmClosed){
+    closeUmkmClosed();
+}
+
+    if(event.target === loginModal){
+        closeLogin();
+    }
+
+    if(event.target === dashboardModal){
+        closeAdminDashboard();
+    }
+
+    if(event.target === umkmModal){
+        closeUmkmModal();
+    }
+    const comingModal=document.getElementById("comingSoonModal");
+
+if(event.target===comingModal){
+
+closeComingSoon();
+if(event.target === umkmComingSoonModal){
+    closeUmkmComingSoon();
+}
+
+}
+
+}
+
+// ================= KIRIM DATA VISITOR =================
+
+fetch("https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        type: "visitor",
+        ip: "",
+        device: navigator.platform,
+        browser: navigator.userAgent
+    })
+});
+function trackFormClick(formName){
+    fetch("https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            type: "click",
+            form: formName
+        })
+    });
+}
+// ================= AMBIL DASHBOARD =================
+
+async function loadDashboard(){
+
+    const url="https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec?action=stats";
+
+    const response=await fetch(url);
+
+    const data=await response.json();
+
+    document.getElementById("totalVisitor").innerHTML=data.totalVisitor;
+
+    document.getElementById("totalClick").innerHTML=data.totalClicks;
+
+    document.getElementById("totalUMKM").innerHTML=data.totalUMKM;
+
+    document.getElementById("totalEvent").innerHTML=data.totalEvent;
+
+    let html="";
+
+    data.popularForms.forEach(item=>{
+
+        html+=`<p>🏆 ${item[0]} — ${item[1]} Lihat</p>`;
+
+    });
+
+    document.getElementById("popularForms").innerHTML=html;
+
+}
+
+loadDashboard();
+const API_URL = "https://script.google.com/macros/s/AKfycby4R7TwYbIC0eFiCHWWeUDapdPkIVAMmuDqLJpgUleOVX0-u9yBpWPArXGUHZd_RbnD/exec";
+
+async function loadDashboardData(){
+
+    const response = await fetch(API_URL + "?action=stats");
+    const data = await response.json();
+
+    document.getElementById("totalVisitor").innerText = data.totalVisitor;
+    document.getElementById("totalClick").innerText = data.totalClicks;
+    document.getElementById("totalUMKM").innerText = data.totalUMKM;
+    document.getElementById("totalEvent").innerText = data.totalEvent;
+
+const chartData = data.visitorChart;
+const maxVisitor = Math.max(...chartData.map(x => x.visitor), 1);
+
+let points = "";
+let dots = "";
+let labels = "";
+
+chartData.forEach((item, index) => {
+    const x = 40 + index * (520 / Math.max(chartData.length - 1, 1));
+const y = 205 - (item.visitor / maxVisitor) * 120;
+    points += `${x},${y} `;
+
+    dots += `
+        <circle cx="${x}" cy="${y}" r="6" class="xy-dot"></circle>
+        <text x="${x}" y="${y - 18}" class="xy-value">${item.visitor}</text>
+    `;
+
+    labels += `
+        <text x="${x}" y="220" class="xy-label">${item.date}</text>
+    `;
+});
+
+document.getElementById("visitorChart").innerHTML = `
+    <svg class="xy-chart" viewBox="0 0 620 240" preserveAspectRatio="none">
+        <line x1="40" y1="200" x2="590" y2="200" class="xy-axis"></line>
+        <line x1="40" y1="50" x2="40" y2="200" class="xy-axis"></line>
+
+        <polyline points="${points}" class="xy-line"></polyline>
+
+        ${dots}
+        ${labels}
+    </svg>
+`;
+
+    document.getElementById("deviceStats").innerHTML = `
+        <div>🤖 Android <b>${data.devices.Android}</b></div>
+        <div>🍎 iPhone <b>${data.devices.iPhone}</b></div>
+        <div>💻 Desktop <b>${data.devices.Desktop}</b></div>
+        <div>📱 Other <b>${data.devices.Other}</b></div>
+    `;
+
+    let popularHTML = "";
+
+    data.popularForms.forEach(item => {
+        popularHTML += `<p>🏆 ${item[0]} — ${item[1]} klik</p>`;
+    });
+
+    document.getElementById("popularForms").innerHTML = popularHTML || "<p>Belum ada klik.</p>";
+}
+function trackFormClick(formName){
+    fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            type: "click",
+            form: formName
+        })
+    });
+}
+function openComingSoon(){
+    document.getElementById("comingSoonModal").style.display = "flex";
+}
+
+function closeComingSoon(){
+    document.getElementById("comingSoonModal").style.display = "none";
+}
+/* =========================================================
+   TOUR DE BULUNGAN
+========================================================= */
+
+
+function openGowesModal(){
+
+    const modal =
+        document.getElementById("gowesModal");
+
+    if(!modal) return;
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeGowesModal(){
+
+    const modal =
+        document.getElementById("gowesModal");
+
+    if(!modal) return;
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "";
+}
+
+
+/* =========================================================
+   GOOGLE FORM
+========================================================= */
+
+function openTourRegistration(){
+
+    /*
+        GANTI LINK DI BAWAH INI
+        dengan link Google Form Tour de Bulungan
+    */
+
+    const FORM_URL =
+        "https://forms.gle/gTppbmFFDGGY4ynd6";
+
+
+    if(
+        !FORM_URL ||
+        FORM_URL.includes("LINK_GOOGLE_FORM")
+    ){
+
+        alert(
+            "Link pendaftaran Tour de Bulungan belum dipasang."
+        );
+
+        return;
+    }
+
+
+    /*
+        Tracking dashboard kamu
+    */
+
+    if(typeof trackFormClick === "function"){
+
+        trackFormClick(
+            "Tour de Bulungan"
+        );
+
+    }
+
+
+    window.open(
+        FORM_URL,
+        "_blank",
+        "noopener"
+    );
+
+}
+
+
+/* =========================================================
+   MAP LIGHTBOX
+========================================================= */
+
+function openTourMap(){
+
+    const lightbox =
+        document.getElementById(
+            "tourMapLightbox"
+        );
+
+    if(!lightbox) return;
+
+    lightbox.style.display =
+        "flex";
+
+}
+
+
+function closeTourMap(event){
+
+    const lightbox =
+        document.getElementById(
+            "tourMapLightbox"
+        );
+
+    if(!lightbox) return;
+
+
+    /*
+        Jika klik gambar,
+        jangan tutup lightbox
+    */
+
+    if(
+        event &&
+        event.target.tagName === "IMG"
+    ){
+        return;
+    }
+
+
+    lightbox.style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL KETIKA KLIK BACKDROP
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const modal =
+            document.getElementById(
+                "gowesModal"
+            );
+
+        if(
+            modal &&
+            event.target === modal
+        ){
+
+            closeGowesModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            const lightbox =
+                document.getElementById(
+                    "tourMapLightbox"
+                );
+
+
+            if(
+                lightbox &&
+                lightbox.style.display === "flex"
+            ){
+
+                lightbox.style.display =
+                    "none";
+
+                return;
+            }
+
+
+            closeGowesModal();
+
+        }
+
+    }
+); 
+function openUmkmComingSoon(){
+    document.getElementById("umkmComingSoonModal").style.display = "flex";
+}
+
+function closeUmkmComingSoon(){
+    document.getElementById("umkmComingSoonModal").style.display = "none";
+}
+let selectedUmkmCategory = "Semua";
+
+function setUmkmCategory(category, button){
+    selectedUmkmCategory = category;
+
+    document.querySelectorAll(".umkm-filter button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    filterUmkmTenant();
+}
+
+function filterUmkmTenant(){
+    const keyword = document.getElementById("umkmSearch").value.toLowerCase();
+    const cards = document.querySelectorAll(".umkm-card");
+    const emptyText = document.getElementById("umkmEmpty");
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+
+        const matchSearch = text.includes(keyword);
+        const matchCategory =
+            selectedUmkmCategory === "Semua" ||
+            text.includes(selectedUmkmCategory.toLowerCase());
+
+        if(matchSearch && matchCategory){
+            card.style.display = "grid";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    emptyText.style.display = visibleCount === 0 ? "block" : "none";
+}
+</script>
+<!--POPUP TOUR DE BULUNGAN-->
+
+<div id="gowesModal" class="tdb-modal">
+
+    <div class="tdb-modal-box">
+
+        <button
+            type="button"
+            class="tdb-close"
+            onclick="closeGowesModal()"
+            aria-label="Tutup">
+            ×
+        </button>
+
+        <section class="tdb-header">
+
+            <div class="tdb-brand-logo">
+                <img
+                    src="assets/event/gowes.png"
+                    alt="Logo Tour de Bulungan">
+            </div>
+
+            <div class="tdb-title">
+
+                <span class="tdb-kicker">
+                    TENGUYUN FEST 2026
+                </span>
+
+                <h2>
+                    TOUR DE BULUNGAN
+                </h2>
+
+                <p>
+                    Gowes bersama menikmati suasana Bulungan
+                    dalam semangat olahraga, kebersamaan,
+                    dan Tenguyun.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="tdb-quick-info">
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">📅</div>
+
+                <div>
+                    <span>Tanggal</span>
+                    <strong>20 September 2026</strong>
+                </div>
+            </div>
+
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">🕟</div>
+
+                <div>
+                    <span>Waktu Kumpul</span>
+                    <strong>16.30 WITA</strong>
+                </div>
+            </div>
+
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">📍</div>
+
+                <div>
+                    <span>Start & Finish</span>
+                    <strong>Universitas Kaltara</strong>
+                </div>
+            </div>
+
+
+            <div class="tdb-info-item">
+                <div class="tdb-info-icon">🚴</div>
+
+                <div>
+                    <span>Kategori</span>
+                    <strong>Umum</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="tdb-main">
+
+            <div class="tdb-route">
+
+                <div class="tdb-section-title">
+
+                    <div>
+                        <span class="tdb-small-title">
+                            RUTE KEGIATAN
+                        </span>
+
+                        <h3>
+                            📍 Rute Tour de Bulungan
+                        </h3>
+                    </div>
+
+                    <span class="tdb-route-badge">
+                        Start = Finish
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="tdb-map"
+                    onclick="openTourMap()"
+                    title="Klik untuk memperbesar rute">
+
+                    <img
+                        src="assets/event/map.png"
+                        alt="Rute Tour de Bulungan">
+
+                    <div class="tdb-map-overlay">
+                        <span>🔍</span>
+                        Klik untuk melihat rute
+                    </div>
+
+                </div>
+
+
+                <div class="tdb-route-info">
+
+                    <div>
+                        <span class="tdb-dot tdb-dot-start"></span>
+
+                        <p>
+                            <small>START</small>
+                            <strong>Universitas Kaltara</strong>
+                        </p>
+                    </div>
+
+                    <div class="tdb-route-line"></div>
+
+                    <div>
+                        <span class="tdb-dot tdb-dot-finish"></span>
+
+                        <p>
+                            <small>FINISH</small>
+                            <strong>Universitas Kaltara</strong>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <aside class="tdb-side">
+
+                <div class="tdb-side-card tdb-doorprize">
+
+                    <div class="tdb-side-icon">
+                        🎁
+                    </div>
+
+                    <div>
+                        <span>HADIAH</span>
+
+                        <h3>
+                            Doorprize Menarik
+                        </h3>
+
+                        <p>
+                            Ikuti Tour de Bulungan dan dapatkan
+                            kesempatan membawa pulang berbagai
+                            doorprize menarik dari panitia.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="tdb-side-card">
+
+                    <div class="tdb-side-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>PESERTA</span>
+
+                        <h3>
+                            Terbuka Untuk Umum
+                        </h3>
+
+                        <p>
+                            Masyarakat umum, komunitas sepeda,
+                            maupun pesepeda hobi dapat mengikuti
+                            kegiatan ini.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="tdb-reminder">
+
+                    <div class="tdb-reminder-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+                        <strong>
+                            Sebelum Mendaftar
+                        </strong>
+
+                        <p>
+                            Pastikan melihat rute kegiatan
+                            dan mengisi data pendaftaran
+                            dengan benar.
+                        </p>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+        <section class="tdb-register">
+
+            <div class="tdb-register-text">
+
+                <span>
+                    PENDAFTARAN TOUR DE BULUNGAN
+                </span>
+
+                <h3>
+                    Siap Gowes Bareng?
+                </h3>
+
+                <p>
+                    Daftarkan dirimu dan ramaikan
+                    Tour de Bulungan 2026.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="tdb-register-btn"
+                onclick="openTourRegistration()">
+
+                <span>🚴</span>
+
+                <div>
+                    <small>KLIK UNTUK</small>
+                    <strong>DAFTAR SEKARANG</strong>
+                </div>
+
+                <span class="tdb-arrow">
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+        <div class="tdb-footer">
+
+            <span>
+                Informasi terbaru:
+            </span>
+
+            <a
+                href="https://www.instagram.com/tenguyunfest/"
+                target="_blank"
+                rel="noopener">
+
+                📷 @tenguyunfest
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    id="tourMapLightbox"
+    class="tdb-lightbox"
+    onclick="closeTourMap(event)">
+
+    <button
+        type="button"
+        class="tdb-lightbox-close"
+        onclick="closeTourMap()">
+
+        ×
+
+    </button>
+
+    <img
+        src="assets/event/map.png"
+        alt="Rute Tour de Bulungan">
+
+</div>
+<script>
+// Blok klik kanan
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+});
+
+// Blok shortcut DevTools umum
+document.addEventListener("keydown", function (event) {
+
+    // F12
+    if (event.key === "F12") {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + I
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "i"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + J
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "j"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + Shift + C
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase() === "c"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Ctrl + U = View Source
+    if (
+        event.ctrlKey &&
+        event.key.toLowerCase() === "u"
+    ) {
+        event.preventDefault();
+        return false;
+    }
+
+});
+</script>
+</body>
+</html>
