@@ -1225,9 +1225,6 @@ button {
   transform: scale(1.045);
   filter: brightness(0.84);
 }
-.hero-wall-shell:hover .photo-track {
-  animation-play-state: paused;
-}
 .wall-badge {
   position: absolute;
   right: 9%;
@@ -1935,9 +1932,13 @@ select:focus-visible {
 .photo-card::after {
   background: linear-gradient(0deg, rgba(30, 12, 43, 0.75), transparent 42%);
 }
-.hero-wall-shell:hover .photo-track,
 .hero-wall-shell:focus-within .photo-track {
   animation-play-state: paused;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-wall-shell:hover .photo-track {
+    animation-play-state: paused;
+  }
 }
 .wall-badge {
   display: none;
