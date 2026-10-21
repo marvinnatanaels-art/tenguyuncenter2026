@@ -77,6 +77,18 @@
       <div class="connection"><span id="connectionLight" class="light offline"></span><span id="connectionLabel">Menghubungkan ke data pertandingan…</span></div>
       <div class="strip-end"><span id="updatedLabel">Belum ada pembaruan skor</span><button type="button" id="refreshBtn" class="action subtle" title="Muat skor terbaru"><span class="refresh-symbol">↻</span> Refresh</button><button type="button" class="action display" id="ledBtn" title="Tampilan untuk layar LED">▣ Mode LED</button></div>
     </div>
+    <section class="final-wall" id="finalWall" aria-labelledby="finalWallTitle" hidden>
+      <div class="final-wall-head">
+        <div>
+          <span class="final-eyebrow">BABAK FINAL · 20 BESAR</span>
+          <h2 id="finalWallTitle">DAFTAR FINALIS <span>2026</span></h2>
+          <p id="finalWallSubtitle">Skor akhir dimulai dari nol · menunggu pertandingan</p>
+        </div>
+        <div class="final-legend"><span class="final-live-indicator"></span><span id="finalWallCount">0 dari 20 selesai</span></div>
+      </div>
+      <div class="final-wall-grid" id="finalWallGrid" aria-live="polite"></div>
+      <div class="final-wall-foot"><span>✦ Highlight Juara 1–3 dan Harapan 1–3 berdasarkan nilai FINAL.</span><span id="finalWallNote">Posisi sementara sampai semua nilai selesai dan seri terselesaikan.</span></div>
+    </section>
     <section class="stats" aria-label="Ringkasan klasemen">
       <div class="stat-box"><span class="stat-label">PESERTA TERDAFTAR</span><strong id="metricRegistered">—</strong><span class="stat-detail">pada kategori terpilih</span></div>
       <div class="stat-box"><span class="stat-label">SKOR SELESAI</span><strong id="metricCompleted">0</strong><span class="stat-detail">atlet / regu lengkap</span></div>

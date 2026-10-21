@@ -52,3 +52,69 @@ body.led .max{width:min(1780px,calc(100% - 76px))}body.led .masthead .max{paddin
 @media (prefers-reduced-motion:reduce){
   .masthead{-webkit-backdrop-filter:none;backdrop-filter:none}
 }
+
+/* === BULUNGAN OPEN: FINAL 20 BESAR / 6 PENGHARGAAN (21 OCT 2026) === */
+.final-wall{border:1px solid #315445;border-radius:16px;background:linear-gradient(135deg,#0c2019,#101c18);padding:12px 16px 11px;margin-bottom:18px;box-shadow:0 16px 42px #0003}
+.final-wall-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:10px}
+.final-eyebrow{font:800 9px var(--display);letter-spacing:1.6px;color:#f0c77c}
+.final-wall-head h2{font:850 clamp(20px,2.15vw,34px)/1.05 var(--display);letter-spacing:-.8px;margin:3px 0}
+.final-wall-head h2 span{color:#f0c77c}
+.final-wall-head p{font-size:10px;color:#b7c8bf}
+.final-legend{white-space:nowrap;border-radius:20px;background:#1f3c30;border:1px solid #53745e;padding:7px 12px;font-size:11px;font-weight:800;color:#d8eade}
+.final-live-indicator{display:inline-block;width:7px;height:7px;border-radius:50%;background:#88dcae;margin-right:8px;box-shadow:0 0 0 3px #83dcae16}
+.final-wall-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(10,minmax(0,1fr));grid-auto-flow:column;gap:5px 12px;min-width:0}
+.final-entry{min-width:0;display:grid;grid-template-columns:37px minmax(0,1fr) 92px;align-items:center;gap:8px;min-height:40px;padding:5px 10px;background:#152820;border:1px solid #344e3e;border-radius:8px;position:relative;overflow:hidden}
+.final-entry-num{font:900 14px var(--display);text-align:center;color:#adc7b3}
+.final-entry-copy{min-width:0;display:flex;flex-direction:column;gap:1px;line-height:1.15}
+.final-entry-copy strong{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.final-entry-copy small{font-size:8px;color:#b0c5b5;letter-spacing:.7px;font-weight:900;white-space:nowrap}
+.final-entry-score{text-align:right;line-height:1;white-space:nowrap;font:900 20px var(--display);color:#e9ede9}
+.final-entry-score small{color:#91a99a;font-size:9px;font-weight:700;margin-left:2px}
+.final-entry-score>small:last-child:not(:first-child){display:block;margin-top:2px;font-size:8px}
+.final-entry.waiting{opacity:.82;background:#11221c}.final-entry.waiting .final-entry-score{color:#9caf9e}
+.final-entry.winner{border-width:1px;border-style:solid;background:linear-gradient(95deg,#25372b,#172d25)}
+.final-entry.winner-1{border-color:#f0c77c;background:linear-gradient(95deg,#5a451f,#263322)}
+.final-entry.winner-1 .final-entry-num,.final-entry.winner-1 .final-entry-copy small{color:#ffe49f}
+.final-entry.winner-2{border-color:#bcc6ca;background:linear-gradient(95deg,#36434b,#1c2c2d)}
+.final-entry.winner-2 .final-entry-num,.final-entry.winner-2 .final-entry-copy small{color:#e3f0fa}
+.final-entry.winner-3{border-color:#bf8161;background:linear-gradient(95deg,#56362a,#242923)}
+.final-entry.winner-3 .final-entry-num,.final-entry.winner-3 .final-entry-copy small{color:#eeb08b}
+.final-entry.winner-4{border-color:#43a58d}.final-entry.winner-4 .final-entry-copy small{color:#90e6c6}
+.final-entry.winner-5{border-color:#668ec8}.final-entry.winner-5 .final-entry-copy small{color:#b0c5fb}
+.final-entry.winner-6{border-color:#9e87c7}.final-entry.winner-6 .final-entry-copy small{color:#cdb0f6}
+.final-entry.provisional{border-style:dashed}
+.final-wall-foot{display:flex;justify-content:space-between;gap:12px;color:#b3c6b8;font-size:9px;margin-top:9px}
+.final-board-mode .identity-topline,.final-board-mode .hero,.final-board-mode .stats,.final-board-mode .leaders,.final-board-mode .score-layout,.final-board-mode .footer{display:none!important}
+.final-board-mode main.max{padding-top:9px}
+.final-board-mode .switch-panel{padding:10px 15px;gap:12px}
+.final-board-mode .switch-group .section-caption{margin-bottom:4px}
+.final-board-mode .seg{padding:6px 13px}
+.final-board-mode .live-strip{padding:9px 2px}
+.final-board-mode .masthead{position:sticky;top:0;z-index:50}
+.final-board-mode .masthead .max{padding-block:6px}
+.final-board-mode .org-logo{height:39px}
+.final-board-mode .org-logo img{max-height:37px}
+.final-board-mode .final-wall{margin-bottom:8px}
+body.led.final-board-mode .max{width:min(1780px,calc(100% - 42px))}
+body.led.final-board-mode .final-entry{min-height:42px;padding-block:6px}
+body.led.final-board-mode .final-entry-copy strong{font-size:clamp(12px,1.07vw,18px)}
+body.led.final-board-mode .final-entry-score{font-size:24px}
+@media(max-height:760px) and (min-width:900px){
+ .final-board-mode .final-entry{min-height:31px;padding-block:3px}
+ .final-board-mode .final-wall-grid{gap:3px 9px}
+ .final-board-mode .final-wall-head{margin-bottom:6px}
+ .final-board-mode .final-wall{padding-block:8px}
+ .final-board-mode .final-wall-foot{margin-top:5px}
+}
+@media(max-width:750px){
+ .final-wall-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row;gap:7px}
+ .final-entry{min-height:49px;grid-template-columns:39px minmax(0,1fr) 84px}
+ .final-entry-copy strong{font-size:12px}
+ .final-wall{padding:12px 10px}
+ .final-wall-head{flex-direction:column;align-items:start;gap:6px}
+ .final-wall-head h2{font-size:23px}
+ .final-wall-foot{display:block;line-height:1.5}
+ .final-board-mode .masthead{position:sticky}
+ .final-board-mode .switch-panel{display:block}
+ .final-board-mode .switch-group+.switch-group{margin-top:10px}
+}
